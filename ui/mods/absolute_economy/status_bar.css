@@ -22,7 +22,32 @@
 .div_metal_storage_display {
     display: block;
     float: left;
- a   height: 24px;
+    height: 24px;
     margin: 0px 4px 0px 5px;
     width: 24px;
 }
+
+.status_bar_metal_gain {
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(1, #00FFBB),
+    color-stop(0, #0279A1)
+    );
+    height: 100%;
+    width: 75%;
+}
+
+.status_bar_metal_loss {
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(1, #FF88FF),
+    color-stop(0, #0279A1)
+    );
+    height: 100%;
+    width: 75%;
+}
+

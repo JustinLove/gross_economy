@@ -23,8 +23,16 @@
       energyNetString: model.energyNetString,
       metalFractionString: model.metalFractionString,
       energyFractionString: model.energyFractionString,
+      metalScale: ko.observable(200),
+      energyScale: ko.observable(4000),
       showResources: model.showResources,
     }
+    statusBarModel.metalGainPercent = ko.computed(function() {
+      return '' + (100 * statusBarModel.metalGain() / statusBarModel.metalScale()) + '%'
+    })
+    statusBarModel.metalLossPercent = ko.computed(function() {
+      return '' + (100 * statusBarModel.metalLoss() / statusBarModel.metalScale()) + '%'
+    })
 
     loadTemplate($('.div_status_bar_cont'), 'coui://ui/mods/absolute_economy/status_bar.html', statusBarModel);
 })()
