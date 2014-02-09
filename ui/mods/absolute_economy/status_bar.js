@@ -6,33 +6,47 @@
         });
     };
 
-    var statusBarModel = {
-      currentMetal: model.currentMetal,
-      currentEnergy: model.currentEnergy,
-      maxMetal: model.maxMetal,
-      maxEnergy: model.maxEnergy,
-      metalGain: model.metalGain,
-      energyGain: model.energyGain,
-      metalLoss: model.metalLoss,
-      energyLoss: model.energyLoss,
-      metalDelta: model.metalDelta,
-      energyDelta: model.energyDelta,
-      metalNet: model.metalNet,
-      energyNet: model.energyNet,
-      metalNetString: model.metalNetString,
-      energyNetString: model.energyNetString,
-      metalFractionString: model.metalFractionString,
-      energyFractionString: model.energyFractionString,
-      metalScale: ko.observable(200),
-      energyScale: ko.observable(4000),
-      showResources: model.showResources,
+    var metal = {
+      current: model.currentMetal,
+      max: model.maxMetal,
+      gain: model.metalGain,
+      loss: model.metalLoss,
+      delta: model.metalDelta,
+      net: model.metalNet,
+      netString: model.metalNetString,
+      fractionString: model.metalFractionString,
+      scale: ko.observable(200),
     }
-    statusBarModel.metalGainPercent = ko.computed(function() {
-      return '' + (100 * statusBarModel.metalGain() / statusBarModel.metalScale()) + '%'
-    })
-    statusBarModel.metalLossPercent = ko.computed(function() {
-      return '' + (100 * statusBarModel.metalLoss() / statusBarModel.metalScale()) + '%'
-    })
+
+    var energy = {
+      current: model.currentEnergy,
+      max: model.maxEnergy,
+      gain: model.energyGain,
+      loss: model.energyLoss,
+      delta: model.energyDelta,
+      net: model.energyNet,
+      netString: model.energyNetString,
+      fractionString: model.energyFractionString,
+      scale: ko.observable(4000),
+    }
+
+    var extendResource = function(resource) {
+      resource.gainPercent = ko.computed(function() {
+        return '' + (100 * resource.gain() / resource.scale()) + '%'
+      })
+      resource.lossPercent = ko.computed(function() {
+        return '' + (100 * resource.loss() / resource.scale()) + '%'
+      })
+    }
+
+    extendResource(metal)
+    extendResource(energy)
+
+    var statusBarModel = {
+      metal: metal,
+      energy: energy,
+      showResources: model.showResources
+    }
 
     loadTemplate($('.div_status_bar_cont'), 'coui://ui/mods/absolute_economy/status_bar.html', statusBarModel);
 })()
