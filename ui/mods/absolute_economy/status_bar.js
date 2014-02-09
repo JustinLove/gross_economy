@@ -15,7 +15,7 @@
       net: model.metalNet,
       netString: model.metalNetString,
       fractionString: model.metalFractionString,
-      scale: ko.observable(200),
+      min: 20,
     }
 
     var energy = {
@@ -27,10 +27,19 @@
       net: model.energyNet,
       netString: model.energyNetString,
       fractionString: model.energyFractionString,
-      scale: ko.observable(4000),
+      min: 4000,
     }
 
     var extendResource = function(resource) {
+      var highestSeen = 0;
+      resource.highest = ko.computed(function() {
+        highestSeen = Math.max(resource.gain(), resource.loss(), highestSeen)
+        return highestSeen
+      })
+      resource.scale = ko.computed(function() {
+        return Math.max(resource.min, resource.highest())
+      })
+
       resource.gainPercent = ko.computed(function() {
         return '' + (100 * resource.gain() / resource.scale()) + '%'
       })
