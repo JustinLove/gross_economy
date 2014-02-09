@@ -1,0 +1,20 @@
+.status_bar_frame {
+  margin-top: 3px;
+}
+
+.status_bar_metal_storage {
+  background-color: black;
+  height: 75%;
+  width: 100%;
+}
+
+.status_bar_metal_storage_frame {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #00BBFF),
+  color-stop(0, #0279A1)
+  );
+}
+

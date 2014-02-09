@@ -1,0 +1,92 @@
+<div class="div_status_bar_cont ignoreMouse">
+    <div class="div_status_bar">
+        <table style="width:100%;" data-bind="visible: showResources">
+            <tbody>
+                <tr>
+                    <td style="width: 50%; text-align: right;">
+                        <div style="float: right; margin-right: -5px;" class="receiveMouse">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="div_status_bar_endcap_angle left_angle"></td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="category_icon_metal">
+                                                <img src="img/status_bar/icon_status_metal.png" />
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="div_status_bar_display">
+                                                <div class="status_bar_frame">
+                                                    <div class="status_bar_metal" data-bind="style: { width: metalFractionString() }">
+                                                    </div>
+                                                </div>
+                                                <div class="status_bar_frame">
+                                                    <div class="status_bar_metal" data-bind="style: { width: metalFractionString() }">
+                                                    </div>
+                                                </div>
+                                                <div class="status_bar_frame status_bar_metal_storage_frame">
+                                                    <div class="status_bar_metal_storage" data-bind="style: { height: metalFractionString() }">
+                                                    </div>
+                                                </div>
+                                                <div class="status_stats">
+                                                    <span id="Span1" data-bind="text: currentMetal">8888</span>/<span id="Span2" data-bind="text: maxMetal">8888</span> Modified
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="div_rate_ctr_cont">
+                                                <div class="div_plusminus_rate_cont">
+                                                    <div class="rate_stat rate_positive" id="Div1" data-bind="text: metalGain">+8888</div>
+                                                    <div class="rate_stat rate_negative" id="Div2" data-bind="text: metalLoss">-8888</div>
+                                                </div>
+                                                <div class="div_rate_ctr_overall rate_positive" data-bind="text: metalNetString, css: { rate_positive: metalNet() > 0, rate_negative: metalNet() < 0}">+8888</div>
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_endcap_flat left_flat"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                    <td style="width: 50%; text-align: left;">
+                        <div style="float: left; margin-left: -5px;" class="receiveMouse">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="div_status_bar_endcap_flat right_flat"></td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="category_icon_energy">
+                                                <img src="img/status_bar/icon_status_energy.png" />
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="div_status_bar_display">
+                                                <div class="status_bar_frame">
+                                                    <div class="status_bar_energy" data-bind="style: { width: energyFractionString() }">
+                                                    </div>
+                                                </div>
+                                                <div class="status_stats">
+                                                    <span id="Span3" data-bind="text: currentEnergy">8888</span>/<span id="Span4" data-bind="text: maxEnergy">8888</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_midpsan">
+                                            <div class="div_rate_ctr_cont">
+                                                <div class="div_plusminus_rate_cont">
+                                                    <div class="rate_stat rate_positive" id="Div3" data-bind="text: energyGain">+7777</div>
+                                                    <div class="rate_stat rate_negative" id="Div4" data-bind="text: energyLoss">-8888</div>
+                                                </div>
+                                                <div class="div_rate_ctr_overall" id="Div5" data-bind="text: energyNetString, css: { rate_positive: energyNet() > 0, rate_negative: energyNet() < 0}">+8888</div>
+                                            </div>
+                                        </td>
+                                        <td class="div_status_bar_endcap_angle right_angle"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

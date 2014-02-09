@@ -1,0 +1,22 @@
+{
+  "author": "wondible",
+  "build": "59607",
+  "category": ["in-game", "ui"],
+  "context": "client",
+  "date": "2014/02/08",
+  "description": "Displays economy as absolute income and spending",
+  "display_name": "Absolute Economy",
+  "enabled": true,
+  "forum": "",
+  "id": "absolute_economy",
+  "identifier": "com.wondible.pa.absolute_economy",
+  "live_game": [
+    "coui://ui/mods/absolute_economy/status_bar.css",
+    "coui://ui/mods/absolute_economy/status_bar.js"
+  ],
+  "priority": 100,
+  "requires": null,
+  "signature": "not yet implemented",
+  "version": "0.0"
+}
+
