@@ -16,5 +16,13 @@
   color-stop(1, #00BBFF),
   color-stop(0, #0279A1)
   );
+  height: 12px;
 }
 
+.div_metal_storage_display {
+    display: block;
+    float: left;
+ a   height: 24px;
+    margin: 0px 4px 0px 5px;
+    width: 24px;
+}
