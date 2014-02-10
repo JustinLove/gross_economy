@@ -3,12 +3,6 @@
 }
 
 .status_bar_metal_storage {
-  background-color: black;
-  height: 75%;
-  width: 100%;
-}
-
-.status_bar_metal_storage_frame {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -16,7 +10,15 @@
   color-stop(1, #00BBFF),
   color-stop(0, #0279A1)
   );
+  height: 75%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.status_bar_metal_storage_frame {
   height: 12px;
+  position: relative;
 }
 
 .div_metal_storage_display {
