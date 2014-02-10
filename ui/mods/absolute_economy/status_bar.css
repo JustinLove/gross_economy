@@ -1,5 +1,13 @@
 .status_bar_frame {
   margin-top: 3px;
+  position: relative;
+}
+
+.status_bar_history {
+  border-right: solid white 1px;
+  position: absolute;
+  width: 1px;
+  height: 100%;
 }
 
 .status_bar_metal_storage {

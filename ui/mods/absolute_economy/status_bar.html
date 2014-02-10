@@ -17,12 +17,16 @@
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_status_bar_display">
                                                 <div class="status_bar_frame">
-                                                    <div class="status_bar_metal_gain" data-bind="style: { width: metal.gainPercent() }">
+                                                    <div data-bind="foreach: metal.gainHistory">
+                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
                                                     </div>
+                                                    <div class="status_bar_metal_gain" data-bind="style: { width: metal.gainPercent() }"> </div>
                                                 </div>
                                                 <div class="status_bar_frame">
-                                                    <div class="status_bar_metal_loss" data-bind="style: { width: metal.lossPercent() }">
+                                                    <div data-bind="foreach: metal.lossHistory">
+                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
                                                     </div>
+                                                    <div class="status_bar_metal_loss" data-bind="style: { width: metal.lossPercent() }"> </div>
                                                 </div>
                                             </div>
                                         </td>
@@ -66,10 +70,16 @@
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_status_bar_display">
                                                 <div class="status_bar_frame">
+                                                    <div data-bind="foreach: energy.gainHistory">
+                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
+                                                    </div>
                                                     <div class="status_bar_energy_gain" data-bind="style: { width: energy.gainPercent() }">
                                                     </div>
                                                 </div>
                                                 <div class="status_bar_frame">
+                                                    <div data-bind="foreach: energy.lossHistory">
+                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
+                                                    </div>
                                                     <div class="status_bar_energy_loss" data-bind="style: { width: energy.lossPercent() }">
                                                     </div>
                                                 </div>

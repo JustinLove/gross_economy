@@ -32,6 +32,8 @@
 
     var extendResource = function(resource) {
       var highestSeen = 0;
+      var gainHistory = [];
+      var lossHistory = [];
       resource.highest = ko.computed(function() {
         highestSeen = Math.max(resource.gain(), resource.loss(), highestSeen)
         return highestSeen
@@ -40,11 +42,21 @@
         return Math.max(resource.min, resource.highest())
       })
 
+      resource.gainHistory = ko.computed(function() {
+        gainHistory.unshift('' + (100 * resource.gain() / resource.scale()) + '%')
+        gainHistory.splice(10,10)
+        return gainHistory
+      })
       resource.gainPercent = ko.computed(function() {
-        return '' + (100 * resource.gain() / resource.scale()) + '%'
+        return resource.gainHistory()[0]
+      })
+      resource.lossHistory = ko.computed(function() {
+        lossHistory.unshift('' + (100 * resource.loss() / resource.scale()) + '%')
+        lossHistory.splice(10,10)
+        return lossHistory
       })
       resource.lossPercent = ko.computed(function() {
-        return '' + (100 * resource.loss() / resource.scale()) + '%'
+        return resource.lossHistory()[0]
       })
     }
 
