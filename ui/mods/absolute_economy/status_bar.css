@@ -53,3 +53,56 @@
     width: 75%;
 }
 
+
+
+.status_bar_energy_storage {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #F9EC31),
+  color-stop(0, #ADA100)
+  );
+  height: 75%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.status_bar_energy_storage_frame {
+  height: 12px;
+  position: relative;
+}
+
+.div_energy_storage_display {
+    display: block;
+    float: left;
+    height: 24px;
+    margin: 0px 4px 0px 5px;
+    width: 24px;
+}
+
+.status_bar_energy_gain {
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(1, #B9FF11),
+    color-stop(0, #ADA100)
+    );
+    height: 100%;
+    width: 75%;
+}
+
+.status_bar_energy_loss {
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(1, #FF4C00),
+    color-stop(0, #ADA100)
+    );
+    height: 100%;
+    width: 75%;
+}
+
