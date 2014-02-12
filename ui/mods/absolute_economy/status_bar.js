@@ -9,9 +9,8 @@
     var metal = {
       current: model.currentMetal,
       max: model.maxMetal,
-      gain: model.metalGain,
-      loss: model.metalLoss,
-      delta: model.metalDelta,
+      currentGain: model.metalGain,
+      currentLoss: model.metalLoss,
       net: model.metalNet,
       netString: model.metalNetString,
       fractionString: model.metalFractionString,
@@ -21,13 +20,43 @@
     var energy = {
       current: model.currentEnergy,
       max: model.maxEnergy,
-      gain: model.energyGain,
-      loss: model.energyLoss,
-      delta: model.energyDelta,
+      currentGain: model.energyGain,
+      currentLoss: model.energyLoss,
       net: model.energyNet,
       netString: model.energyNetString,
       fractionString: model.energyFractionString,
       min: 4000,
+    }
+
+    var series = function(value, scale) {
+      var history = []
+
+      var s = {
+        scale: scale,
+        value: value,
+        percent: ko.computed(function() {
+          return '' + (100 * value() / scale()) + '%';
+        }),
+        max: ko.observable(0),
+        min: ko.observable(1000000000)
+      }
+
+      value.subscribe(function(v) {
+        history.unshift(v)
+        history.splice(10,10)
+
+        s.max(Math.max.apply(Math, history))
+        s.min(Math.min.apply(Math, history))
+      })
+
+      s.rangeStart = ko.computed(function() {
+        return '' + (100 * s.min() / scale()) + '%'
+      })
+      s.rangeEnd = ko.computed(function() {
+        return '' + (100 * (s.max() - s.min()) / scale()) + '%'
+      })
+
+      return s
     }
 
     var extendResource = function(resource) {
@@ -35,29 +64,15 @@
       var gainHistory = [];
       var lossHistory = [];
       resource.highest = ko.computed(function() {
-        highestSeen = Math.max(resource.gain(), resource.loss(), highestSeen)
+        highestSeen = Math.max(resource.currentGain(), resource.currentLoss(), highestSeen)
         return highestSeen
       })
       resource.scale = ko.computed(function() {
         return Math.max(resource.min, resource.highest())
       })
 
-      resource.gainHistory = ko.computed(function() {
-        gainHistory.unshift('' + (100 * resource.gain() / resource.scale()) + '%')
-        gainHistory.splice(10,10)
-        return gainHistory
-      })
-      resource.gainPercent = ko.computed(function() {
-        return resource.gainHistory()[0]
-      })
-      resource.lossHistory = ko.computed(function() {
-        lossHistory.unshift('' + (100 * resource.loss() / resource.scale()) + '%')
-        lossHistory.splice(10,10)
-        return lossHistory
-      })
-      resource.lossPercent = ko.computed(function() {
-        return resource.lossHistory()[0]
-      })
+      resource.gain = series(resource.currentGain, resource.scale)
+      resource.loss = series(resource.currentLoss, resource.scale)
     }
 
     extendResource(metal)

@@ -3,11 +3,11 @@
   position: relative;
 }
 
-.status_bar_history {
-  border-right: solid white 1px;
+.status_bar_range {
+  border-top: solid white 1px;
   position: absolute;
-  width: 1px;
-  height: 100%;
+  top: 2px;
+  height: 1px;
 }
 
 .status_bar_metal_storage {

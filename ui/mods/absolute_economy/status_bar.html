@@ -17,24 +17,20 @@
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_status_bar_display">
                                                 <div class="status_bar_frame">
-                                                    <div data-bind="foreach: metal.gainHistory">
-                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
-                                                    </div>
-                                                    <div class="status_bar_metal_gain" data-bind="style: { width: metal.gainPercent() }"> </div>
+                                                    <div class="status_bar_range" data-bind="style: { left: metal.gain.rangeStart, width: metal.gain.rangeEnd}"></div>
+                                                    <div class="status_bar_metal_gain" data-bind="style: { width: metal.gain.percent() }"> </div>
                                                 </div>
                                                 <div class="status_bar_frame">
-                                                    <div data-bind="foreach: metal.lossHistory">
-                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
-                                                    </div>
-                                                    <div class="status_bar_metal_loss" data-bind="style: { width: metal.lossPercent() }"> </div>
+                                                    <div class="status_bar_range" data-bind="style: { left: metal.loss.rangeStart, width: metal.loss.rangeEnd}"></div>
+                                                    <div class="status_bar_metal_loss" data-bind="style: { width: metal.loss.percent() }"> </div>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_rate_ctr_cont">
                                                 <div class="div_plusminus_rate_cont">
-                                                    <div class="rate_stat rate_positive" id="Div1" data-bind="text: metal.gain">+8888</div>
-                                                    <div class="rate_stat rate_negative" id="Div2" data-bind="text: metal.loss">-8888</div>
+                                                    <div class="rate_stat rate_positive" id="Div1" data-bind="text: metal.gain.value">+8888</div>
+                                                    <div class="rate_stat rate_negative" id="Div2" data-bind="text: metal.loss.value">-8888</div>
                                                 </div>
                                                 <div class="div_rate_ctr_overall rate_positive" data-bind="text: metal.netString, css: { rate_positive: metal.net() > 0, rate_negative: metal.net() < 0}">+8888</div>
                                             </div>
@@ -70,17 +66,13 @@
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_status_bar_display">
                                                 <div class="status_bar_frame">
-                                                    <div data-bind="foreach: energy.gainHistory">
-                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
-                                                    </div>
-                                                    <div class="status_bar_energy_gain" data-bind="style: { width: energy.gainPercent() }">
+                                                    <div class="status_bar_range" data-bind="style: { left: energy.gain.rangeStart, width: energy.gain.rangeEnd}"></div>
+                                                    <div class="status_bar_energy_gain" data-bind="style: { width: energy.gain.percent() }">
                                                     </div>
                                                 </div>
                                                 <div class="status_bar_frame">
-                                                    <div data-bind="foreach: energy.lossHistory">
-                                                      <div class="status_bar_history" data-bind="style: { left: $data}"></div>
-                                                    </div>
-                                                    <div class="status_bar_energy_loss" data-bind="style: { width: energy.lossPercent() }">
+                                                    <div class="status_bar_range" data-bind="style: { left: energy.loss.rangeStart, width: energy.loss.rangeEnd}"></div>
+                                                    <div class="status_bar_energy_loss" data-bind="style: { width: energy.loss.percent() }">
                                                     </div>
                                                 </div>
                                             </div>
@@ -88,8 +80,8 @@
                                         <td class="div_status_bar_midpsan">
                                             <div class="div_rate_ctr_cont">
                                                 <div class="div_plusminus_rate_cont">
-                                                    <div class="rate_stat rate_positive" id="Div3" data-bind="text: energy.gain">+7777</div>
-                                                    <div class="rate_stat rate_negative" id="Div4" data-bind="text: energy.loss">-8888</div>
+                                                    <div class="rate_stat rate_positive" id="Div3" data-bind="text: energy.gain.value">+7777</div>
+                                                    <div class="rate_stat rate_negative" id="Div4" data-bind="text: energy.loss.value">-8888</div>
                                                 </div>
                                                 <div class="div_rate_ctr_overall" id="Div5" data-bind="text: energy.netString, css: { rate_positive: energy.net() > 0, rate_negative: energy.net() < 0}">+8888</div>
                                             </div>
