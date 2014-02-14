@@ -84,5 +84,5 @@
       showResources: model.showResources
     }
 
-    loadTemplate($('.div_status_bar_cont'), 'coui://ui/mods/absolute_economy/status_bar.html', statusBarModel);
+    loadTemplate($('.div_status_bar_cont'), 'coui://ui/mods/gross_economy/status_bar.html', statusBarModel);
 })()
