@@ -9,6 +9,7 @@
       netString: model.metalNetString,
       fractionString: model.metalFractionString,
       min: 20,
+      tick: 10,
     }
 
     var energy = {
@@ -21,6 +22,7 @@
       netString: model.energyNetString,
       fractionString: model.energyFractionString,
       min: 4000,
+      tick: 1000,
     }
 
     var series = function(value, scale) {
@@ -64,6 +66,20 @@
       })
       resource.scale = ko.computed(function() {
         return Math.max(resource.min, resource.highest())
+      })
+      resource.ticks = ko.computed(function() {
+        var s = resource.scale()
+        var axis = []
+        var dx = resource.tick
+        var weight = Math.sqrt(dx/s)
+        if (weight < 0.15) { return axis }
+        var c = Math.min(15, Math.floor(16 * weight)).toString(16)
+        var color = '#' + c + c + c
+        for(var x = 0;x < s;x += dx) {
+          axis.push({x: '' + (100 * x / s) + '%', color: color})
+        }
+        console.log(axis)
+        return axis
       })
 
       resource.gain = series(resource.currentGain, resource.scale)

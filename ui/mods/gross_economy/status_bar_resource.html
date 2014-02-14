@@ -4,6 +4,9 @@
 </td>
 <td class="div_status_bar_midpsan">
     <div class="div_status_bar_display">
+        <div class="status_bar_ticks" data-bind="foreach: ticks">
+          <div class="status_bar_tick" data-bind="style: {left: x, borderColor: color}"></div>
+        </div>
         <div class="status_bar_frame">
             <div class="status_bar_range" data-bind="style: { left: gain.rangeStart, width: gain.rangeEnd}"></div>
             <div class="status_bar_gain" data-bind="style: { width: gain.percent() }"> </div>
