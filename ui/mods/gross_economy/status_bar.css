@@ -10,7 +10,48 @@
   height: 1px;
 }
 
-.status_bar_metal_storage {
+.status_bar_storage_frame {
+  height: 12px;
+  position: relative;
+}
+
+.div_storage_display {
+  display: block;
+  float: left;
+  height: 24px;
+  margin: 0px 4px 0px 5px;
+  width: 24px;
+}
+
+.status_bar_storage {
+  height: 75%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.status_bar_gain {
+  height: 100%;
+  width: 75%;
+}
+
+.status_bar_loss {
+  height: 100%;
+  width: 75%;
+}
+
+.category_icon {
+  width: 21px;
+  height: 21px;
+  margin: 3px 5px 0px 12px;
+}
+
+.metal .category_icon {
+  background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_metal.png) no-repeat;
+  /*img/status_bar/icon_status_metal.png*/
+}
+
+.metal .status_bar_storage {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -18,52 +59,34 @@
   color-stop(1, #00BBFF),
   color-stop(0, #0279A1)
   );
-  height: 75%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
-.status_bar_metal_storage_frame {
-  height: 12px;
-  position: relative;
+.metal .status_bar_gain {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #00FFBB),
+  color-stop(0, #0279A1)
+  );
 }
 
-.div_metal_storage_display {
-    display: block;
-    float: left;
-    height: 24px;
-    margin: 0px 4px 0px 5px;
-    width: 24px;
-}
-
-.status_bar_metal_gain {
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(1, #00FFBB),
-    color-stop(0, #0279A1)
-    );
-    height: 100%;
-    width: 75%;
-}
-
-.status_bar_metal_loss {
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(1, #FF88FF),
-    color-stop(0, #0279A1)
-    );
-    height: 100%;
-    width: 75%;
+.metal .status_bar_loss {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #FF88FF),
+  color-stop(0, #0279A1)
+  );
 }
 
 
+.energy .category_icon {
+  background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_energy.png) no-repeat;
+}
 
-.status_bar_energy_storage {
+.energy .status_bar_storage {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -71,46 +94,24 @@
   color-stop(1, #F9EC31),
   color-stop(0, #ADA100)
   );
-  height: 75%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
-.status_bar_energy_storage_frame {
-  height: 12px;
-  position: relative;
+.energy .status_bar_gain {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #B9FF11),
+  color-stop(0, #ADA100)
+  );
 }
 
-.div_energy_storage_display {
-    display: block;
-    float: left;
-    height: 24px;
-    margin: 0px 4px 0px 5px;
-    width: 24px;
+.energy .status_bar_loss {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #FF4C00),
+  color-stop(0, #ADA100)
+  );
 }
-
-.status_bar_energy_gain {
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(1, #B9FF11),
-    color-stop(0, #ADA100)
-    );
-    height: 100%;
-    width: 75%;
-}
-
-.status_bar_energy_loss {
-    background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(1, #FF4C00),
-    color-stop(0, #ADA100)
-    );
-    height: 100%;
-    width: 75%;
-}
-

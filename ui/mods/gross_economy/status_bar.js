@@ -1,12 +1,6 @@
 (function() {
-    var loadTemplate = function ($element, url, model) {
-        $element.load(url, function () {
-            console.log("Loading html " + url);
-            ko.applyBindings(model, $element[0]);
-        });
-    };
-
     var metal = {
+      resource: 'metal',
       current: model.currentMetal,
       max: model.maxMetal,
       currentGain: model.metalGain,
@@ -18,6 +12,7 @@
     }
 
     var energy = {
+      resource: 'energy',
       current: model.currentEnergy,
       max: model.maxEnergy,
       currentGain: model.energyGain,
@@ -78,11 +73,18 @@
     extendResource(metal)
     extendResource(energy)
 
-    var statusBarModel = {
-      metal: metal,
-      energy: energy,
-      showResources: model.showResources
-    }
+    var loadTemplate = function ($after, html, model) {
+      var $parent = $after.parent()
+      $parent.find('.div_status_bar_midpsan').remove()
+      $parent.addClass(model.resource)
+      $(html).insertAfter($after)
+      ko.applyBindings(model, $parent[0]);
+    };
 
-    loadTemplate($('.div_status_bar_cont'), 'coui://ui/mods/gross_economy/status_bar.html', statusBarModel);
+    $.get('coui://ui/mods/gross_economy/status_bar_resource.html', function(html) {
+      console.log("Loading html ");
+      loadTemplate($('.div_status_bar_cont .left_angle'), html, metal);
+      loadTemplate($('.div_status_bar_cont .right_flat'), html, energy);
+    });
+
 })()
