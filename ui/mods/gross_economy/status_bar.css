@@ -60,6 +60,11 @@
   width: 75%;
 }
 
+.status_stats {
+  position: absolute;
+  bottom: 10px;
+}
+
 .category_icon {
   width: 21px;
   height: 21px;
