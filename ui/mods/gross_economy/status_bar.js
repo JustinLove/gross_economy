@@ -56,6 +56,11 @@
       return s
     }
 
+    var tickColor = function(weight) {
+      var c = Math.min(15, Math.floor(16 * weight)).toString(16)
+      return '#' + c + c + c
+    }
+
     var extendResource = function(resource) {
       var highestSeen = 0;
       var gainHistory = [];
@@ -71,14 +76,25 @@
         var s = resource.scale()
         var axis = []
         var dx = resource.tick
-        var weight = Math.sqrt(dx/s)
-        if (weight < 0.15) { return axis }
-        var c = Math.min(15, Math.floor(16 * weight)).toString(16)
-        var color = '#' + c + c + c
-        for(var x = 0;x < s;x += dx) {
-          axis.push({x: '' + (100 * x / s) + '%', color: color})
+        var w1 = Math.sqrt(dx/s)
+        while (w1 < 0.15) {
+          dx = dx * 5
+          w1 = Math.sqrt(dx/s)
         }
-        console.log(axis)
+        var w2 = Math.sqrt(5*dx/s)
+        var w3 = Math.sqrt(25*dx/s)
+        var c1 = tickColor(w1)
+        var c2 = tickColor(w2)
+        var c3 = tickColor(w3)
+        for(var x = 0, i = 0;x < s;x += dx,i+=1) {
+          if (i % 25 == 0) {
+            axis.push({x: '' + (100 * x / s) + '%', color: c3})
+          } else if (i % 5 == 0) {
+            axis.push({x: '' + (100 * x / s) + '%', color: c2})
+          } else {
+            axis.push({x: '' + (100 * x / s) + '%', color: c1})
+          }
+        }
         return axis
       })
 
