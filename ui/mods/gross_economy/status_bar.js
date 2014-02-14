@@ -6,7 +6,9 @@
       currentGain: model.metalGain,
       currentLoss: model.metalLoss,
       net: model.metalNet,
-      netString: model.metalNetString,
+      netString: ko.computed(function() {
+        return ((model.metalNet() > 0) ? '+' : '') + Math.round(model.metalNet()/10)
+      }),
       fractionString: model.metalFractionString,
       min: 20,
       tick: 10,
@@ -19,7 +21,9 @@
       currentGain: model.energyGain,
       currentLoss: model.energyLoss,
       net: model.energyNet,
-      netString: model.energyNetString,
+      netString: ko.computed(function() {
+        return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/1000)
+      }),
       fractionString: model.energyFractionString,
       min: 4000,
       tick: 1000,
