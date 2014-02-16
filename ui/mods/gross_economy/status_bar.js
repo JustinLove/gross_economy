@@ -1,4 +1,6 @@
 (function() {
+  "use strict";
+
   var metal = {
     resource: 'metal',
     current: model.currentMetal,
