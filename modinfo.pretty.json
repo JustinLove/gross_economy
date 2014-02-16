@@ -4,7 +4,7 @@
   "category": ["in-game", "ui"],
   "context": "client",
   "date": "2014/02/08",
-  "description": "Displays economy as gross income and spending",
+  "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy",
   "enabled": true,
   "forum": "",
@@ -14,7 +14,7 @@
     "coui://ui/mods/gross_economy/status_bar.css",
     "coui://ui/mods/gross_economy/status_bar.js"
   ],
-  "priority": 100,
+  "priority": 101,
   "requires": null,
   "signature": "not yet implemented",
   "version": "0.0"
