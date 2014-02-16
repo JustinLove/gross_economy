@@ -30,7 +30,8 @@
     }
 
     var series = function(value, scale) {
-      var history = []
+      var valueHistory = []
+      var timeHistory = []
 
       var s = {
         scale: scale,
@@ -43,11 +44,16 @@
       }
 
       value.subscribe(function(v) {
-        history.unshift(v)
-        history.splice(10,10)
+        var t = Date.now()
+        valueHistory.push(v)
+        timeHistory.push(t)
+        while (timeHistory.length > 0 && t - timeHistory[0] > 30000) {
+          valueHistory.shift()
+          timeHistory.shift()
+        }
 
-        s.max(Math.max.apply(Math, history))
-        s.min(Math.min.apply(Math, history))
+        s.max(Math.max.apply(Math, valueHistory))
+        s.min(Math.min.apply(Math, valueHistory))
       })
 
       s.rangeStart = ko.computed(function() {
