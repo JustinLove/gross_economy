@@ -109,6 +109,11 @@
       }
       return axis
     })
+    resource.ratio = ko.computed(function() {
+      var denom = resource.currentLoss()
+      if (denom < 1) {denom = 1}
+      return resource.currentGain() / denom
+    })
 
     resource.gain = series(resource.currentGain, resource.scale)
     resource.loss = series(resource.currentLoss, resource.scale)
@@ -116,6 +121,17 @@
 
   extendResource(metal)
   extendResource(energy)
+
+  var limit = metal.limit = energy.limit = ko.computed(function() {
+    if (metal.ratio() >= 1 && energy.ratio() >= 1) {
+      return 'none'
+    } else if (metal.ratio() < energy.ratio()) {
+      return 'metal'
+    } else {
+      return 'energy'
+    }
+  })
+
 
   var loadTemplate = function ($after, html, model) {
     var $parent = $after.parent()

@@ -140,3 +140,11 @@
   color-stop(0, #ADA100)
   );
 }
+
+.economic_limit {
+  background: red;
+  color: black;
+  -webkit-text-fill-color: black;
+  padding: 4px;
+  height: 16px;
+}

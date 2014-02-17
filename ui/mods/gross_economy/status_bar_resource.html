@@ -26,7 +26,7 @@
             <div class="rate_stat rate_positive" id="Div1" data-bind="text: gain.value">+8888</div>
             <div class="rate_stat rate_negative" id="Div2" data-bind="text: loss.value">-8888</div>
         </div>
-        <div class="div_rate_ctr_overall rate_positive" data-bind="text: netString, css: { rate_positive: net() > 0, rate_negative: net() < 0}">+8888</div>
+        <div class="div_rate_ctr_overall rate_positive" data-bind="text: netString, css: { rate_positive: net() > 0, rate_negative: net() < 0, economic_limit: limit() == resource}">+8888</div>
     </div>
 </td>
 <td class="div_status_bar_midpsan">
