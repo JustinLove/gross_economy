@@ -113,6 +113,9 @@
       return axis
     })
     resource.ratio = ko.computed(function() {
+      if (resource.current() > 1) {
+        return 1
+      }
       var denom = resource.currentLoss()
       if (denom < 1) {denom = 1}
       return resource.currentGain() / denom
