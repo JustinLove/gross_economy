@@ -129,12 +129,12 @@
   extendResource(energy)
 
   var limit = metal.limit = energy.limit = ko.computed(function() {
-    if (metal.ratio() >= 1 && energy.ratio() >= 1) {
-      return 'none'
-    } else if (metal.ratio() < energy.ratio()) {
+    if (metal.ratio() < 1) {
       return 'metal'
-    } else {
+    } else if (energy.ratio() < 1) {
       return 'energy'
+    } else {
+      return 'none'
     }
   })
 
