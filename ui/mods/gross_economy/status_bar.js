@@ -77,6 +77,9 @@
     var highestSeen = 0;
     var gainHistory = [];
     var lossHistory = [];
+    resource.currentBfs = ko.computed(function() {
+      return Math.round(resource.current() / resource.tick)
+    })
     resource.highest = ko.computed(function() {
       highestSeen = Math.max(resource.currentGain(), resource.currentLoss(), highestSeen)
       return highestSeen
