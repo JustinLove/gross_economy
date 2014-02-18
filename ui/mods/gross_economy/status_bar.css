@@ -162,6 +162,10 @@
   background: red;
   color: black;
   -webkit-text-fill-color: black;
+}
+
+.div_rate_ctr_overall {
   padding: 4px;
   height: 16px;
+  margin-top: -6px;
 }
