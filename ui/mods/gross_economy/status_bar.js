@@ -149,7 +149,7 @@
 
   $.get('coui://ui/mods/gross_economy/status_bar_resource.html', function(html) {
     console.log("Gross Economy loaded HTML, modifing status bar");
-    loadTemplate($('.div_status_bar_cont .left_angle'), html, metal);
-    loadTemplate($('.div_status_bar_cont .right_flat'), html, energy);
+    loadTemplate($('.div_status_bar .left_angle'), html, metal);
+    loadTemplate($('.div_status_bar .right_flat'), html, energy);
   });
 })()

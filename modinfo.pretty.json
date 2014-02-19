@@ -1,22 +1,22 @@
 {
   "author": "wondible",
-  "build": "59607",
+  "build": "61250",
   "category": ["in-game", "ui"],
   "context": "client",
-  "date": "2014/02/17",
+  "date": "2014/02/19",
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy",
   "enabled": true,
   "forum": "https://forums.uberent.com/threads/wip-gross-economy.56540/",
   "id": "gross_economy",
   "identifier": "com.wondible.pa.gross_economy",
-  "live_game": [
+  "live_game_econ": [
     "coui://ui/mods/gross_economy/status_bar.css",
     "coui://ui/mods/gross_economy/status_bar.js"
   ],
   "priority": 110,
   "requires": null,
   "signature": "not yet implemented",
-  "version": "0.0"
+  "version": "1.0"
 }
 
