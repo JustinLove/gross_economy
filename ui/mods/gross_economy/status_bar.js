@@ -1,4 +1,8 @@
-define(['gross_economy/resource'], function(extendResource) {
+define([
+  'gross_economy/resource',
+  'text!gross_economy/status_bar_resource.html'
+],
+function(extendResource, html) {
   "use strict";
 
   var metal = {
@@ -44,7 +48,7 @@ define(['gross_economy/resource'], function(extendResource) {
     }
   })
 
-  var loadTemplate = function ($after, html, model) {
+  var installTemplate = function ($after, html, model) {
     var $parent = $after.parent()
     $parent.find('.div_status_bar_midpsan').remove()
     $parent.addClass(model.resource)
@@ -54,11 +58,9 @@ define(['gross_economy/resource'], function(extendResource) {
 
   return {
     load: function() {
-      $.get('coui://ui/mods/gross_economy/status_bar_resource.html', function(html) {
-        console.log("Gross Economy loaded HTML, modifing status bar");
-        loadTemplate($('.div_status_bar .left_angle'), html, metal);
-        loadTemplate($('.div_status_bar .right_flat'), html, energy);
-      })
+      console.log("Gross Economy ready, modifing status bar");
+      installTemplate($('.div_status_bar .left_angle'), html, metal);
+      installTemplate($('.div_status_bar .right_flat'), html, energy);
     },
     metal: metal,
     energy: energy
