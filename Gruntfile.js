@@ -59,6 +59,14 @@ module.exports = function(grunt) {
             return content
           }
         }
+      },
+      dev: {
+        files: [
+          {
+            src: 'modinfo.dev.json',
+            dest: 'modinfo.json',
+          },
+        ]
       }
     },
   });
