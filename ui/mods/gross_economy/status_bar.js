@@ -31,7 +31,7 @@ function(extendResource, html) {
       return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/1000)
     }),
     fractionString: model.energyFractionString,
-    min: 4000,
+    min: 2000,
     tick: 1000,
   }
 

@@ -5,18 +5,13 @@ define(['gross_economy/series'], function(series) {
   }
 
   return function(resource) {
-    var highestSeen = 0;
     var gainHistory = [];
     var lossHistory = [];
     resource.currentBfs = ko.computed(function() {
       return Math.round(resource.current() / resource.tick)
     })
-    resource.highest = ko.computed(function() {
-      highestSeen = Math.max(resource.currentGain(), resource.currentLoss(), highestSeen)
-      return highestSeen
-    })
     resource.scale = ko.computed(function() {
-      return Math.max(resource.min, resource.highest())
+      return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss())
     })
     resource.ticks = ko.computed(function() {
       var s = resource.scale()

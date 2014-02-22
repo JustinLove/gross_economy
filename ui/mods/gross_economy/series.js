@@ -30,7 +30,7 @@ define([], function() {
       return '' + (100 * s.min() / scale()) + '%'
     })
     s.rangeEnd = ko.computed(function() {
-      return '' + (100 * (s.max() - s.min()) / scale()) + '%'
+      return '' + Math.min(100, 100 * (s.max() - s.min()) / scale()) + '%'
     })
 
     return s
