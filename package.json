@@ -1,0 +1,8 @@
+{
+  "name": "gross_economy",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
+}
