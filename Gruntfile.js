@@ -1,7 +1,13 @@
 module.exports = function(grunt) {
+  var target = grunt.option('target') || 'gross_economy_test'
+  var title = 'Gross Economy Test'
+  if (target == 'gross_economy') {
+    title = 'Gross Economy'
+  }
 
   // Project configuration.
   grunt.initConfig({
+    target: target,
     requirejs: {
       target: {
         options: {
@@ -13,7 +19,7 @@ module.exports = function(grunt) {
 
           //name: 'lib/ext/almond',
           name: 'gross_economy/main',
-          out: '../gross_economy_test/ui/mods/gross_economy/bootstrap.js',
+          out: '../<%= target %>/ui/mods/gross_economy/bootstrap.js',
 
           skipModuleInsertion: true,
           onBuildWrite: function( name, path, contents ) {
@@ -34,7 +40,7 @@ module.exports = function(grunt) {
               'LICENSE.txt',
               'README.md',
               'ui/mods/gross_economy/*.css'],
-            dest: '../gross_economy_test/',
+            dest: '../<%= target %>/',
           },
         ],
       },
@@ -42,13 +48,13 @@ module.exports = function(grunt) {
         files: [
           {
             src: 'modinfo.dev.json',
-            dest: '../gross_economy_test/modinfo.json',
+            dest: '../<%= target %>/modinfo.json',
           },
         ],
         options: {
           process: function(content, srcpath) {
-            content = content.replace('Gross Economy Dev', 'Gross Economy Test')
-            content = content.replace('gross_economy_dev', 'gross_economy_test')
+            content = content.replace('Gross Economy Dev', title)
+            content = content.replace('gross_economy_dev', target)
             content = content.replace('    "coui://ui/mods/gross_economy/require.js",\n', '')
             return content
           }
