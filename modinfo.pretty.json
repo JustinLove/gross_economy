@@ -1,9 +1,9 @@
 {
   "author": "wondible",
-  "build": "61250",
+  "build": "61450",
   "category": ["in-game", "ui"],
   "context": "client",
-  "date": "2014/02/19",
+  "date": "2014/02/21",
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy",
   "enabled": true,
@@ -12,11 +12,12 @@
   "identifier": "com.wondible.pa.gross_economy",
   "live_game_econ": [
     "coui://ui/mods/gross_economy/status_bar.css",
-    "coui://ui/mods/gross_economy/status_bar.js"
+    "coui://ui/mods/gross_economy/require.js",
+    "coui://ui/mods/gross_economy/bootstrap.js"
   ],
   "priority": 110,
   "requires": null,
   "signature": "not yet implemented",
-  "version": "1.0.1"
+  "version": "1.1.0"
 }
 
