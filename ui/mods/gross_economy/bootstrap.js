@@ -4,8 +4,4 @@ require.config({
     text: 'gross_economy/text',
   }
 })
-require(['gross_economy/status_bar'], function(status_bar) {
-  "use strict";
-
-  status_bar.load()
-})
+require(['gross_economy/main'])

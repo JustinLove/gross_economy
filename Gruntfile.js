@@ -12,8 +12,17 @@ module.exports = function(grunt) {
           stubModules: ['text'],
 
           //name: 'lib/ext/almond',
-          include: 'gross_economy/bootstrap',
+          name: 'gross_economy/main',
           out: 'dist/ui/mods/gross_economy/bootstrap.js',
+
+          skipModuleInsertion: true,
+          onBuildWrite: function( name, path, contents ) {
+            return require('amdclean').clean({
+              code: contents,
+              globalObject: true,
+              globalObjectName: 'gross_economy',
+            });
+          },
         }
       }
     },
