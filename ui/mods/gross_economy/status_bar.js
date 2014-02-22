@@ -57,7 +57,7 @@ function(extendResource, html) {
   };
 
   return {
-    load: function() {
+    ready: function() {
       console.log("Gross Economy ready, modifing status bar");
       installTemplate($('.div_status_bar .left_angle'), html, metal);
       installTemplate($('.div_status_bar .right_flat'), html, energy);

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
           //name: 'lib/ext/almond',
           name: 'gross_economy/main',
-          out: 'dist/ui/mods/gross_economy/bootstrap.js',
+          out: '../gross_economy_test/ui/mods/gross_economy/bootstrap.js',
 
           skipModuleInsertion: true,
           onBuildWrite: function( name, path, contents ) {
@@ -34,22 +34,22 @@ module.exports = function(grunt) {
               'LICENSE.txt',
               'README.md',
               'ui/mods/gross_economy/*.css'],
-            dest: 'dist/',
+            dest: '../gross_economy_test/',
           },
         ],
       },
       modinfo: {
         files: [
           {
-            src: 'modinfo.pretty.json',
-            dest: 'dist/modinfo.json',
+            src: 'modinfo.dev.json',
+            dest: '../gross_economy_test/modinfo.json',
           },
         ],
         options: {
           process: function(content, srcpath) {
-            content = content.replace('Gross Economy', 'Gross Economy Test')
-            content = content.replace('"gross_economy"', '"gross_economy_test"')
-            content = content.replace('com.wondible.pa.gross_economy', 'com.wondible.pa.gross_economy_test')
+            content = content.replace('Gross Economy Dev', 'Gross Economy Test')
+            content = content.replace('gross_economy_dev', 'gross_economy_test')
+            content = content.replace('    "coui://ui/mods/gross_economy/require.js",\n', '')
             return content
           }
         }
