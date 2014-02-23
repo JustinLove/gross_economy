@@ -12,10 +12,12 @@
         <div class="status_bar_frame_gross">
             <div class="status_bar_range" data-bind="style: { left: gain.rangeStart, width: gain.rangeEnd}"></div>
             <div class="status_bar_gain" data-bind="style: { width: gain.percent() }"> </div>
+            <div class="status_bar_from_storage" data-bind="style: { left: gain.percent(), width: fromStorage() }"> </div>
         </div>
         <div class="status_bar_frame_gross">
             <div class="status_bar_range" data-bind="style: { left: loss.rangeStart, width: loss.rangeEnd}"></div>
             <div class="status_bar_loss" data-bind="style: { width: loss.percent() }"> </div>
+            <div class="status_bar_to_storage" data-bind="style: { left: loss.percent(), width: toStorage() }"> </div>
         </div>
     </div>
 </td>

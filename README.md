@@ -6,6 +6,8 @@ A status bar mod for Planetary Annihilation that emphasises income and expense s
 
 The main bars are the income and expense for each resource.  The tick scale is currently 10 metal and 1000 energy, what a typical bot fabber uses, with emphasized marks at 5x.  Note: due to the large range of values that are covered, ticks will be removed when they get too crowded.
 
+A dark extension to a bar represents a shortfall being made up by storage, or a surplus being sent to storage.
+
 The white dash in each bar is the range of values over the last 30 seconds.
 
 The net amount of each resource is expressed in "basic fabbers" that could be started or stopped to balance that side of the economy.

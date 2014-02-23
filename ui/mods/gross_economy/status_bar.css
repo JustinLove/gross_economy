@@ -23,6 +23,7 @@
   position: absolute;
   top: 2px;
   height: 1px;
+  z-index: 1;
 }
 
 .status_bar_storage_frame {
@@ -50,14 +51,20 @@
   bottom: 0;
 }
 
-.status_bar_gain {
+.status_bar_gain,
+.status_bar_loss {
   height: 100%;
   width: 75%;
 }
 
-.status_bar_loss {
+.status_bar_to_storage,
+.status_bar_from_storage {
+  position: absolute;
   height: 100%;
-  width: 75%;
+  width: 0;
+  background-color: #444;
+  top: 0;
+  z-index: 0;
 }
 
 .status_stats {
@@ -114,6 +121,10 @@
   );
 }
 
+.metal .status_bar_to_storage,
+.metal .status_bar_from_storage {
+  background-color: #336;
+}
 
 .energy .category_icon {
   background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_energy.png) no-repeat;
@@ -156,6 +167,11 @@
   color-stop(1, #FF4C00),
   color-stop(0, #ADA100)
   );
+}
+
+.energy .status_bar_to_storage,
+.energy .status_bar_from_storage {
+  background-color: #662;
 }
 
 .economic_limit {
