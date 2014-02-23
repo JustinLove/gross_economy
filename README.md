@@ -12,11 +12,44 @@ The white dash in each bar is the range of values over the last 30 seconds.
 
 The net amount of each resource is expressed in "basic fabbers" that could be started or stopped to balance that side of the economy.
 
+The net amount is color coded similar to Economic Efficiency (see below)
+
 The net amount is invert highlighted when that resource is the limit on build rate.
 
 The energy icon has a dull red circle background when energy is negative and radar etc. is shut down.
 
 Storage has been made smaller and vertical.  Units are expressed in basic-fabber-seconds.
+
+## Color Code
+
+Percents efficiency rate
+
+### Metal
+
+Storage full: blue
+
+Storage not-empty: green
+
+Storage empty:
+- > 75%: green
+- 50%-75%: yellow
+- 33%-50%: orange
+- < 33%: red
+
+### Energy
+
+Storage full:
+- > 150+: blue
+- 110%-150%: green
+- < 110%: yellow
+
+Storage not-empty:
+- > 100%: yellow
+- < 100%: orange
+
+Storage empty:
+- > 90%: orange
+- < 90%: red
 
 ## Conflicts
 

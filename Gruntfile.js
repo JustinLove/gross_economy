@@ -39,6 +39,7 @@ module.exports = function(grunt) {
             src: [
               'LICENSE.txt',
               'README.md',
+              'CHANGELOG.md',
               'ui/mods/gross_economy/*.css'],
             dest: '../<%= target %>/',
           },
