@@ -77,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task(s).
-  grunt.registerTask('default', ['requirejs', 'copy']);
+  grunt.registerTask('default', ['requirejs', 'copy:simple', 'copy:modinfo']);
 
 };
