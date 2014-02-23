@@ -175,15 +175,15 @@
 }
 
 .rate_wasted {
-  color: #884;
+  color: #6cf;
 }
 
 .rate_good {
-  color: #0f0;
+  color: #0a0;
 }
 
 .rate_warning {
-  color: yellow;
+  color: #dd0;
 }
 
 .rate_danger {
@@ -195,17 +195,17 @@
 }
 
 .economic_limit .rate_wasted {
-  background-color: #680; 
+  background-color: #6cf;
   color: black;
 }
 
 .economic_limit .rate_good {
-  background-color: #0f0;
+  background-color: #0a0;
   color: black;
 }
 
 .economic_limit .rate_warning {
-  background-color: yellow;
+  background-color: #dd0;
   color: black;
 }
 
