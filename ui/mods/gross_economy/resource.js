@@ -56,6 +56,13 @@ define(['gross_economy/series'], function(series) {
       net = Math.min(net, resource.current())
       return '' + (100 * net / resource.scale()) + '%'
     })
+    resource.coloration = ko.computed(function() {
+      var storage = resource.current() / resource.max()
+      var denom = resource.currentLoss()
+      if (denom < 1) {denom = 1}
+      var ratio = resource.currentGain() / denom
+      return 'rate_' + resource.judgement(storage, ratio)
+    })
 
     resource.gain = series(resource.currentGain, resource.scale)
     resource.loss = series(resource.currentLoss, resource.scale)

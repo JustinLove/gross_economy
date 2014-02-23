@@ -174,10 +174,49 @@
   background-color: #662;
 }
 
-.economic_limit {
-  background: red;
+.rate_wasted {
+  color: #884;
+}
+
+.rate_good {
+  color: #0f0;
+}
+
+.rate_warning {
+  color: yellow;
+}
+
+.rate_danger {
+  color: orange;
+}
+
+.rate_critical {
+  color: red;
+}
+
+.economic_limit .rate_wasted {
+  background-color: #680; 
   color: black;
-  -webkit-text-fill-color: black;
+}
+
+.economic_limit .rate_good {
+  background-color: #0f0;
+  color: black;
+}
+
+.economic_limit .rate_warning {
+  background-color: yellow;
+  color: black;
+}
+
+.economic_limit .rate_danger {
+  background-color: orange;
+  color: black;
+}
+
+.economic_limit .rate_critical {
+  background-color: red;
+  color: black;
 }
 
 .div_rate_ctr_overall {

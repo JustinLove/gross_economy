@@ -1,8 +1,9 @@
 define([
   'gross_economy/resource',
+  'gross_economy/judgement',
   'text!gross_economy/status_bar_resource.html'
 ],
-function(extendResource, html) {
+function(extendResource, judgement, html) {
   "use strict";
 
   var metal = {
@@ -18,6 +19,7 @@ function(extendResource, html) {
     fractionString: model.metalFractionString,
     min: 20,
     tick: 10,
+    judgement: judgement.metal,
   }
 
   var energy = {
@@ -33,6 +35,7 @@ function(extendResource, html) {
     fractionString: model.energyFractionString,
     min: 2000,
     tick: 1000,
+    judgement: judgement.energy,
   }
 
   extendResource(metal)
