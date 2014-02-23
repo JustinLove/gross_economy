@@ -10,22 +10,22 @@
           <div class="status_bar_tick" data-bind="style: {left: x, borderColor: color}"></div>
         </div>
         <div class="status_bar_frame_gross">
-            <div class="status_bar_range" data-bind="style: { left: gain.rangeStart, width: gain.rangeEnd}"></div>
-            <div class="status_bar_gain" data-bind="style: { width: gain.percent() }"> </div>
-            <div class="status_bar_from_storage" data-bind="style: { left: gain.percent(), width: fromStorage() }"> </div>
-        </div>
-        <div class="status_bar_frame_gross">
             <div class="status_bar_range" data-bind="style: { left: loss.rangeStart, width: loss.rangeEnd}"></div>
             <div class="status_bar_loss" data-bind="style: { width: loss.percent() }"> </div>
             <div class="status_bar_to_storage" data-bind="style: { left: loss.percent(), width: toStorage() }"> </div>
+        </div>
+        <div class="status_bar_frame_gross">
+            <div class="status_bar_range" data-bind="style: { left: gain.rangeStart, width: gain.rangeEnd}"></div>
+            <div class="status_bar_gain" data-bind="style: { width: gain.percent() }"> </div>
+            <div class="status_bar_from_storage" data-bind="style: { left: gain.percent(), width: fromStorage() }"> </div>
         </div>
     </div>
 </td>
 <td class="div_status_bar_midpsan">
     <div class="div_rate_ctr_cont" data-bind="css: {economic_limit: limit() == resource}">
         <div class="div_plusminus_rate_cont">
-            <div class="rate_stat rate_positive" id="Div1" data-bind="text: gain.value">+8888</div>
             <div class="rate_stat rate_negative" id="Div2" data-bind="text: loss.value">-8888</div>
+            <div class="rate_stat rate_positive" id="Div1" data-bind="text: gain.value">+8888</div>
         </div>
         <div class="div_rate_ctr_overall" data-bind="text: netString, css: coloration">+8888</div>
     </div>
