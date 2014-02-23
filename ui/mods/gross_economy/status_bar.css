@@ -21,7 +21,7 @@
 .status_bar_range {
   border-top: solid white 1px;
   position: absolute;
-  top: 2px;
+  bottom: 0px;
   height: 1px;
   z-index: 1;
 }
