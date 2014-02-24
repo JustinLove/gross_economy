@@ -61,7 +61,7 @@ module.exports = function(grunt) {
             info.identifier = "com.wondible.pa." + target
             info.live_game_econ.shift()
             console.log(info.version, info.date)
-            return JSON.stringify(info)
+            return JSON.stringify(info, null, 2)
           }
         }
       },
