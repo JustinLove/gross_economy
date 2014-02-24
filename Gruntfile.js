@@ -54,11 +54,14 @@ module.exports = function(grunt) {
         ],
         options: {
           process: function(content, srcpath) {
-            content = content.replace('2014/02/21', require('dateformat')(new Date(), 'yyyy/mm/dd'))
-            content = content.replace('Gross Economy Dev', title)
-            content = content.replace('gross_economy_dev', target)
-            content = content.replace('    "coui://ui/mods/gross_economy/require.js",\n', '')
-            return content
+            var info = JSON.parse(content)
+            info.date = require('dateformat')(new Date(), 'yyyy/mm/dd')
+            info.display_name = title
+            info.id = target
+            info.identifier = "com.wondible.pa." + target
+            info.live_game_econ.shift()
+            console.log(info.version, info.date)
+            return JSON.stringify(info)
           }
         }
       },

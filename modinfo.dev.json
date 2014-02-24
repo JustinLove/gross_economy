@@ -11,8 +11,8 @@
   "id": "gross_economy_dev",
   "identifier": "com.wondible.pa.gross_economy_dev",
   "live_game_econ": [
-    "coui://ui/mods/gross_economy/status_bar.css",
     "coui://ui/mods/gross_economy/require.js",
+    "coui://ui/mods/gross_economy/status_bar.css",
     "coui://ui/mods/gross_economy/bootstrap.js"
   ],
   "priority": 110,
