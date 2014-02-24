@@ -5,6 +5,7 @@
     "grunt": "~0.4.2",
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-copy": "~0.5.0",
-    "amdclean": "~1.2.1"
+    "amdclean": "~1.2.1",
+    "dateformat": "~1.0.7-1.2.3"
   }
 }
