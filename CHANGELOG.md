@@ -1,3 +1,8 @@
+## 2.0
+
+- Loads in Gamma (62037)
+- Fixed range going off scale; the scale will use the range max, so it should be a little less jumpy.\
+
 ## 1.1
 
 - Using RequireJS interally, built with Grunt
