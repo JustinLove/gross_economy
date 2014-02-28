@@ -88,7 +88,6 @@
 
 .metal .category_icon {
   background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_metal.png) no-repeat;
-  /*img/status_bar/icon_status_metal.png*/
 }
 
 .metal .status_bar_storage {
@@ -221,6 +220,5 @@
 
 .div_rate_ctr_overall {
   padding: 4px;
-  height: 16px;
   margin-top: -6px;
 }

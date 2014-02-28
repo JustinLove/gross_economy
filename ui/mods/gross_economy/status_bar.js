@@ -51,19 +51,17 @@ function(extendResource, judgement, html) {
     }
   })
 
-  var installTemplate = function ($after, html, model) {
-    var $parent = $after.parent()
-    $parent.find('.div_status_bar_midpsan').remove()
+  var installTemplate = function ($parent, html, model) {
     $parent.addClass(model.resource)
-    $(html).insertAfter($after)
+    $parent.html(html)
     ko.applyBindings(model, $parent[0]);
   };
 
   return {
     ready: function() {
       console.log("Gross Economy ready, modifing status bar");
-      installTemplate($('.div_status_bar .left_angle'), html, metal);
-      installTemplate($('.div_status_bar .right_flat'), html, energy);
+      installTemplate($('.div_status_bar_left tr'), html, metal);
+      installTemplate($('.div_status_bar_right tr'), html, energy);
     },
     metal: metal,
     energy: energy
