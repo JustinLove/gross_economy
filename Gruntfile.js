@@ -59,7 +59,11 @@ module.exports = function(grunt) {
             info.display_name = title
             info.id = target
             info.identifier = "com.wondible.pa." + target
-            info.live_game_econ.shift()
+            for (var scene in info.scenes) {
+              if (info.scenes[scene][0].match('require.js')) {
+                info.scenes[scene].shift()
+              }
+            }
             console.log(info.version, info.date)
             return JSON.stringify(info, null, 2)
           }
