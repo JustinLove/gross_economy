@@ -1,3 +1,8 @@
+## 2.0.1
+
+- Fix cosmetic updates from 63180
+- Update modinfo for scenes key
+
 ## 2.0
 
 - Loads in Gamma (62037)
