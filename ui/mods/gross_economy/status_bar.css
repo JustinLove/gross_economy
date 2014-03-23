@@ -91,7 +91,7 @@
 }
 
 .metal .category_icon {
-  background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_metal.png) no-repeat;
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_metal.png) no-repeat;
 }
 
 .metal .status_bar_storage {
@@ -130,7 +130,7 @@
 }
 
 .energy .category_icon {
-  background: url(coui://ui/alpha/live_game/img/status_bar/icon_status_energy.png) no-repeat;
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_energy.png) no-repeat;
 }
 
 @-webkit-keyframes stall {
