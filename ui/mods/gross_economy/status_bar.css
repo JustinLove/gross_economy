@@ -1,6 +1,6 @@
 .status_bar_frame_gross {
-  height: 6px;
-  margin: 3px 0px 0px 0px;
+  height: 18px;
+  margin: 0px 0px 0px 0px;
   width: 100%;
   position: relative;
   border: none;
@@ -21,9 +21,9 @@
 .status_bar_range {
   border-top: solid white 1px;
   position: absolute;
-  bottom: 0px;
+  top: 50%;
   height: 1px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .status_bar_storage_frame {
@@ -51,16 +51,33 @@
   bottom: 0;
 }
 
-.status_bar_gain,
-.status_bar_loss {
-  height: 100%;
+.status_bar_gain {
+  position: absolute;
+  height: 18px;
   width: 75%;
+  z-index: 0;
 }
 
-.status_bar_to_storage,
+.status_bar_loss {
+  position: absolute;
+  top: 5px;
+  height: 8px;
+  width: 75%;
+  z-index: 1;
+}
+
+.status_bar_to_storage {
+  position: absolute;
+  height: 8px;
+  width: 0;
+  background-color: #444;
+  top: 5px;
+  z-index: 1;
+}
+
 .status_bar_from_storage {
   position: absolute;
-  height: 100%;
+  height: 18px;
   width: 0;
   background-color: #444;
   top: 0;
@@ -105,13 +122,8 @@
 }
 
 .metal .status_bar_gain {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #00FFBB),
-  color-stop(0, #0279A1)
-  );
+  border: #0279A1 solid 2px;
+  background-color: rgba(2, 121, 161, 0.3);
 }
 
 .metal .status_bar_loss {
@@ -124,9 +136,12 @@
   );
 }
 
-.metal .status_bar_to_storage,
-.metal .status_bar_from_storage {
+.metal .status_bar_to_storage {
   background-color: #447;
+}
+
+.metal .status_bar_from_storage {
+  background-color: rgba(64, 64, 112, 0.7);
 }
 
 .energy .category_icon {
@@ -153,13 +168,8 @@
 }
 
 .energy .status_bar_gain {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #B9FF11),
-  color-stop(0, #ADA100)
-  );
+  border: solid #ADA100 2px;
+  background-color: rgba(173, 161, 0, 0.3);
 }
 
 .energy .status_bar_loss {
@@ -172,9 +182,12 @@
   );
 }
 
-.energy .status_bar_to_storage,
-.energy .status_bar_from_storage {
+.energy .status_bar_to_storage {
   background-color: #662;
+}
+
+.energy .status_bar_from_storage {
+  background-color: rgba(100, 100, 32, 0.7);
 }
 
 .rate_wasted {
