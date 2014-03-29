@@ -54,6 +54,7 @@ function(extendResource, judgement, html) {
   var installTemplate = function ($parent, html, model) {
     $parent.addClass(model.resource)
     $parent.html(html)
+    model.$parent = $parent.parents('.div_status_bar_cont')
     ko.applyBindings(model, $parent[0]);
   };
 

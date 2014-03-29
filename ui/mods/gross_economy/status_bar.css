@@ -1,3 +1,23 @@
+.div_status_bar_left,
+.div_status_bar_right {
+  border: none;
+  box-shadow: none;
+}
+
+.div_status_bar_left .div_status_bar_cont {
+  border: solid #333 1px;
+  padding: 7px 0px 0px 26px ;
+  border-corner-shape: bevel;
+  border-radius: 0 0 0 26px;
+}
+
+.div_status_bar_right .div_status_bar_cont {
+  border: solid #333 1px;
+  padding: 7px 26px 0px 0px ;
+  border-corner-shape: bevel;
+  border-radius: 0 0 26px 0;
+}
+
 .status_bar_frame_gross {
   height: 18px;
   margin: 0px 0px 0px 0px;
@@ -191,23 +211,23 @@
 }
 
 .rate_wasted {
-  color: #6cf;
+  background-color: #6cf;
 }
 
 .rate_good {
-  color: #0a0;
+  background-color: #0a0;
 }
 
 .rate_warning {
-  color: #dd0;
+  background-color: #dd0;
 }
 
 .rate_danger {
-  color: orange;
+  background-color: orange;
 }
 
 .rate_critical {
-  color: red;
+  background-color: red;
 }
 
 .economic_limit .rate_wasted {

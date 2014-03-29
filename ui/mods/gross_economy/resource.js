@@ -61,12 +61,22 @@ define(['gross_economy/series'], function(series) {
       net = Math.min(net, resource.current())
       return '' + (100 * net / resource.scale()) + '%'
     })
-    resource.coloration = ko.computed(function() {
+    resource.colorCalculated = ko.computed(function() {
       var storage = resource.current() / resource.max()
       var denom = resource.currentLoss()
       if (denom < 1) {denom = 1}
       var ratio = resource.currentGain() / denom
       return 'rate_' + resource.judgement(storage, ratio)
+    })
+
+    resource.coloration = ko.observable('rate_good')
+
+    resource.colorCalculated.subscribe(resource.coloration)
+
+    resource.coloration.subscribe(function(value) {
+      if (resource.$parent) {
+        resource.$parent.attr('class', "div_status_bar_cont " + value)
+      }
     })
 
     resource.gain = series(resource.currentGain, resource.scale)
