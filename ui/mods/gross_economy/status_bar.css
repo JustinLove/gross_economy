@@ -76,6 +76,7 @@
   height: 18px;
   width: 75%;
   z-index: 0;
+  border: solid black 2px;
 }
 
 .status_bar_loss {
@@ -84,24 +85,27 @@
   height: 8px;
   width: 75%;
   z-index: 1;
+  background-color: black;
 }
 
 .status_bar_to_storage {
   position: absolute;
   height: 8px;
   width: 0;
-  background-color: #444;
   top: 5px;
   z-index: 1;
+  background-color: #444;
 }
 
 .status_bar_from_storage {
   position: absolute;
   height: 18px;
   width: 0;
-  background-color: #444;
   top: 0;
   z-index: 0;
+  border: solid #444 0px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
 }
 
 .status_stats {
@@ -141,29 +145,6 @@
   );
 }
 
-.metal .status_bar_gain {
-  border: #0279A1 solid 2px;
-  background-color: rgba(2, 121, 161, 0.3);
-}
-
-.metal .status_bar_loss {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #FF88FF),
-  color-stop(0, #0279A1)
-  );
-}
-
-.metal .status_bar_to_storage {
-  background-color: #447;
-}
-
-.metal .status_bar_from_storage {
-  background-color: rgba(64, 64, 112, 0.7);
-}
-
 .energy .category_icon {
   background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_energy.png) no-repeat;
 }
@@ -185,29 +166,6 @@
   color-stop(1, #F9EC31),
   color-stop(0, #ADA100)
   );
-}
-
-.energy .status_bar_gain {
-  border: solid #ADA100 2px;
-  background-color: rgba(173, 161, 0, 0.3);
-}
-
-.energy .status_bar_loss {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #FF4C00),
-  color-stop(0, #ADA100)
-  );
-}
-
-.energy .status_bar_to_storage {
-  background-color: #662;
-}
-
-.energy .status_bar_from_storage {
-  background-color: rgba(100, 100, 32, 0.7);
 }
 
 .rate_wasted {
