@@ -12,7 +12,8 @@ define(['gross_economy/series'], function(series) {
     })
     resource.scale = ko.computed(function() {
       if (resource.loss) {
-        return Math.max(resource.min, resource.gain.max() * 2, resource.loss.max())
+        return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss(),
+          resource.gain.max() * 2, resource.loss.max())
       } else {
         return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss())
       }
