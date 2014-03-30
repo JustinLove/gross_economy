@@ -42,9 +42,9 @@
 }
 
 .status_bar_range {
-  border-top: solid white 1px;
+  border-top: solid #888 1px;
   position: absolute;
-  top: 50%;
+  top: 10px;
   height: 1px;
   z-index: 2;
 }
@@ -52,7 +52,7 @@
 .status_bar_storage_frame {
   border: 1px solid black;
   border-radius: 2px;
-  background-color: white;
+  background-color: #888;
   margin: 0px 0px 0px 0px;
   width: 100%;
   height: 18px;
@@ -73,7 +73,7 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-color: #444;
+  background-color: white;
 }
 
 .status_bar_gain {
@@ -100,7 +100,7 @@
   width: 0;
   top: 7px;
   z-index: 1;
-  background-color: #666;
+  background-color: white;
 }
 
 .status_bar_from_storage {
@@ -109,9 +109,9 @@
   width: 0;
   top: 2px;
   z-index: 0;
-  border: solid #444 0px;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
+  border: solid white 0px;
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .status_stats {
