@@ -1,7 +1,6 @@
 define(['gross_economy/series'], function(series) {
   var tickColor = function(weight) {
-    var c = Math.min(15, Math.floor(16 * weight)).toString(16)
-    return '#' + c + c + c
+    return 'rgba(255, 255, 255, ' + weight + ')'
   }
 
   return function(resource) {
@@ -69,7 +68,7 @@ define(['gross_economy/series'], function(series) {
       return 'rate_' + resource.judgement(storage, ratio)
     })
 
-    resource.coloration = ko.observable('rate_good')
+    resource.coloration = ko.observable()
 
     resource.colorCalculated.subscribe(resource.coloration)
 
