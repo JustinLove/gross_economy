@@ -5,10 +5,8 @@
 }
 
 .div_status_bar_cont {
-  border: solid #333 1px;
+  border: solid 1px;
   border-corner-shape: bevel;
-  background-color: #888;
-  color: black;
 }
 
 .div_status_bar_left .div_status_bar_cont {
@@ -46,7 +44,7 @@
 }
 
 .status_bar_range {
-  border-top: solid #888 1px;
+  border-top: solid 1px;
   position: absolute;
   top: 10px;
   height: 1px;
@@ -54,9 +52,8 @@
 }
 
 .status_bar_storage_frame {
-  border: 1px solid black;
+  border: 1px solid;
   border-radius: 2px;
-  background-color: #888;
   margin: 0px 0px 0px 0px;
   width: 100%;
   height: 18px;
@@ -77,7 +74,6 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-color: white;
 }
 
 .status_bar_gain {
@@ -86,7 +82,7 @@
   height: 18px;
   width: 75%;
   z-index: 0;
-  border: solid black 2px;
+  border: solid 2px;
 }
 
 .status_bar_loss {
@@ -95,7 +91,6 @@
   height: 8px;
   width: 75%;
   z-index: 1;
-  background-color: black;
 }
 
 .status_bar_to_storage {
@@ -104,7 +99,6 @@
   width: 0;
   top: 7px;
   z-index: 1;
-  background-color: white;
 }
 
 .status_bar_from_storage {
@@ -113,7 +107,7 @@
   width: 0;
   top: 2px;
   z-index: 0;
-  border: solid white 0px;
+  border: solid 0px;
   border-top-width: 2px;
   border-bottom-width: 2px;
 }
@@ -122,25 +116,6 @@
   text-align: center;
   position: absolute;
   bottom: 3px;
-  color: black;
-}
-
-.rate_positive_small {
-  color: #060;
-}
-
-.rate_negative_small {
-  color: #800;
-}
-
-.text_rate {
-  -webkit-background-clip: none;
-  -webkit-text-fill-color: inherit;
-}
-
-.color_positive, .color_negative {
-  background-image: none;
-  color: black;
 }
 
 .icon_frame {
@@ -177,6 +152,70 @@
   left: 8px;
 }
 
+.div_rate_ctr_overall {
+  padding: 4px;
+  margin-top: -6px;
+}
+
+/* Inverse Colors */
+
+.div_status_bar_cont {
+  border-color: #333;
+  background-color: #888;
+  color: black;
+}
+
+.status_bar_storage_frame {
+  border-color: black;
+  background-color: #888;
+}
+
+.status_bar_storage {
+  background-color: white;
+}
+
+.status_bar_gain {
+  border-color: black;
+}
+
+.status_bar_loss {
+  background-color: black;
+}
+
+.status_bar_to_storage {
+  background-color: white;
+}
+
+.status_bar_from_storage {
+  border-color: white;
+}
+
+.status_bar_range {
+  border-color: #888;
+}
+
+.status_stats {
+  color: black;
+}
+
+.rate_positive_small {
+  color: #060;
+}
+
+.rate_negative_small {
+  color: #800;
+}
+
+.text_rate {
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: inherit;
+}
+
+.color_positive, .color_negative {
+  background-image: none;
+  color: black;
+}
+
 .rate_wasted {
   background-color: #6cf;
 }
@@ -202,7 +241,3 @@
   color: white;
 }
 
-.div_rate_ctr_overall {
-  padding: 4px;
-  margin-top: -6px;
-}
