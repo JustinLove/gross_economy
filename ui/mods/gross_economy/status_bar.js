@@ -94,6 +94,7 @@ function(extendResource, judgement, html) {
       installTemplate($('.div_status_bar_left tr'), html, metal);
       installTemplate($('.div_status_bar_right tr'), html, energy);
       $eff = $('.div_status_bar_mid .div_status_bar_cont')
+      $('.div_status_bar').addClass('div_status_bar_inverse')
     },
     metal: metal,
     energy: energy
