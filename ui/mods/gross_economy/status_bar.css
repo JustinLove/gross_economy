@@ -1,24 +1,3 @@
-.div_status_bar_left,
-.div_status_bar_right {
-  border: none;
-  box-shadow: none;
-}
-
-.div_status_bar_cont {
-  border: solid 1px;
-  border-corner-shape: bevel;
-}
-
-.div_status_bar_left .div_status_bar_cont {
-  padding: 7px 7px 0px 26px ;
-  border-radius: 0 0 0 26px;
-}
-
-.div_status_bar_right .div_status_bar_cont {
-  padding: 7px 26px 0px 0px ;
-  border-radius: 0 0 26px 0;
-}
-
 .div_status_bar_mid {
   min-width: 80px;
 }
@@ -159,10 +138,27 @@
 
 /* Inverse Colors */
 
+.div_status_bar_inverse .div_status_bar_left,
+.div_status_bar_inverse .div_status_bar_right {
+  border: none;
+  box-shadow: none;
+}
+
 .div_status_bar_inverse .div_status_bar_cont {
-  border-color: #333;
+  border: solid #333 1px;
+  border-corner-shape: bevel;
   background-color: #888;
   color: black;
+}
+
+.div_status_bar_inverse .div_status_bar_left .div_status_bar_cont {
+  padding: 7px 7px 0px 26px ;
+  border-radius: 0 0 0 26px;
+}
+
+.div_status_bar_inverse .div_status_bar_right .div_status_bar_cont {
+  padding: 7px 26px 0px 0px ;
+  border-radius: 0 0 26px 0;
 }
 
 .div_status_bar_inverse .status_bar_storage_frame {
@@ -211,7 +207,8 @@
   -webkit-text-fill-color: inherit;
 }
 
-.div_status_bar_inverse .color_positive, .color_negative {
+.div_status_bar_inverse .color_positive,
+.div_status_bar_inverse .color_negative {
   background-image: none;
   color: black;
 }
@@ -241,3 +238,101 @@
   color: white;
 }
 
+/* Classic Black Colors */
+
+.div_status_bar_black .metal .status_bar_storage {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #00BBFF),
+  color-stop(0, #0279A1)
+  );
+}
+
+.div_status_bar_black .energy .status_bar_storage {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #F9EC31),
+  color-stop(0, #ADA100)
+  );
+}
+
+.div_status_bar_black .status_bar_gain {
+  border-color: #0B0;
+}
+
+.div_status_bar_black .status_bar_loss {
+  background-color: red;
+}
+
+.div_status_bar_black .status_bar_to_storage {
+  background-color: #B00;
+}
+
+.div_status_bar_black .status_bar_from_storage {
+  border-color: #080;
+}
+
+.div_status_bar_black .status_bar_range {
+  border-color: white;
+}
+
+.div_status_bar_black .status_stats {
+  xcolor: black;
+}
+
+.div_status_bar_black .rate_positive_small {
+  xcolor: #060;
+}
+
+.div_status_bar_black .rate_negative_small {
+  xcolor: #800;
+}
+
+.div_status_bar_black .rate_wasted .div_rate_ctr_overall {
+  color: #6cf;
+}
+
+.div_status_bar_black .rate_good .div_rate_ctr_overall {
+  color: #0a0;
+}
+
+.div_status_bar_black .rate_warning .div_rate_ctr_overall {
+  color: #dd0;
+}
+
+.div_status_bar_black .rate_danger .div_rate_ctr_overall {
+  color: orange;
+}
+
+.div_status_bar_black .rate_critical .div_rate_ctr_overall {
+  color: red;
+}
+
+.div_status_bar_black .rate_wasted .economic_limit .div_rate_ctr_overall {
+  color: black;
+  background-color: #6cf;
+}
+
+.div_status_bar_black .rate_good .economic_limit  .div_rate_ctr_overall {
+  color: black;
+  background-color: #0a0;
+}
+
+.div_status_bar_black .rate_warning .economic_limit  .div_rate_ctr_overall {
+  color: black;
+  background-color: #dd0;
+}
+
+.div_status_bar_black .rate_danger .economic_limit  .div_rate_ctr_overall {
+  color: black;
+  background-color: orange;
+}
+
+.div_status_bar_black .rate_critical .economic_limit .div_rate_ctr_overall {
+  color: black;
+  background-color: red;
+}
