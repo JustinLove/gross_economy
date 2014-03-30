@@ -202,26 +202,6 @@
   color: white;
 }
 
-.economic_limit .rate_good {
-  background-color: #0a0;
-  color: black;
-}
-
-.economic_limit .rate_warning {
-  background-color: #dd0;
-  color: black;
-}
-
-.economic_limit .rate_danger {
-  background-color: orange;
-  color: black;
-}
-
-.economic_limit .rate_critical {
-  background-color: red;
-  color: black;
-}
-
 .div_rate_ctr_overall {
   padding: 4px;
   margin-top: -6px;
