@@ -1,3 +1,8 @@
+## 3.0.0
+
+- Supply is a box with the demand bar inside
+- Moved color coding into the bar backgdrop
+
 ## 2.0.1
 
 - Fix cosmetic updates from 63180

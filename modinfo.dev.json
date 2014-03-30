@@ -1,9 +1,9 @@
 {
   "author": "wondible",
-  "build": "63234",
+  "build": "63475",
   "category": ["in-game", "ui"],
   "context": "client",
-  "date": "2014/03/23",
+  "date": "2014/03/30",
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy Dev",
   "enabled": true,
@@ -20,6 +20,6 @@
   "priority": 100,
   "requires": null,
   "signature": "not yet implemented",
-  "version": "2.0.1"
+  "version": "3.0.0"
 }
 

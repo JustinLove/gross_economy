@@ -4,19 +4,17 @@ A status bar mod for Planetary Annihilation that emphasises income and expense s
 
 ## Features
 
-The main bars are the income and expense for each resource.  The tick scale is currently 10 metal and 1000 energy, what a typical bot fabber uses, with emphasized marks at 5x.  Note: due to the large range of values that are covered, ticks will be removed when they get too crowded.
+Income is represented by larger hollow box, demand by a smaller solid bar.  The tick scale is currently 10 metal and 1000 energy, what a typical bot fabber uses, with emphasized marks at 5x.  Note: due to the large range of values that are covered, ticks will be removed when they get too crowded.
 
-A dark extension to a bar represents a shortfall being made up by storage, or a surplus being sent to storage.
+A white extension to a bar represents a shortfall being made up by storage, or a surplus being sent to storage.
 
-The white dash in each bar is the range of values over the last 30 seconds.
+The grey dash in the demand bar is the range of values over the last 30 seconds.
 
 The net amount of each resource is expressed in "basic fabbers" that could be started or stopped to balance that side of the economy.
 
-The net amount is color coded similar to Economic Efficiency (see below)
+The background color is coded similar to Economic Efficiency (see below)
 
 The net amount is invert highlighted when that resource is the limit on build rate.
-
-The energy icon has a dull red circle background when energy is negative and radar etc. is shut down.
 
 Storage has been made smaller and vertical.  Units are expressed in basic-fabber-seconds.
 
@@ -53,7 +51,7 @@ Storage empty:
 
 ## Conflicts
 
-Partially compatible with Economic Efficiency - the additional center box will remain if both are enabled.
+Any other mod which replaces the economy/status bar
 
 ## Development
 
