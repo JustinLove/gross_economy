@@ -51,6 +51,27 @@ function(extendResource, judgement, html) {
     }
   })
 
+  var effColorCalculated = ko.computed(function() {
+    if (energy.ratio() < metal.ratio()) {
+      return energy.coloration()
+    } else {
+      return metal.coloration()
+    }
+  })
+
+  var effColoration = ko.observable()
+
+  effColorCalculated.subscribe(effColoration)
+
+  var $eff
+
+  effColoration.subscribe(function(value) {
+    if ($eff) {
+      $eff.attr('class', "div_status_bar_cont " + value)
+    }
+  })
+  
+
   var installTemplate = function ($parent, html, model) {
     $parent.addClass(model.resource)
     $parent.html(html)
@@ -63,6 +84,7 @@ function(extendResource, judgement, html) {
       console.log("Gross Economy ready, modifing status bar");
       installTemplate($('.div_status_bar_left tr'), html, metal);
       installTemplate($('.div_status_bar_right tr'), html, energy);
+      $eff = $('.div_status_bar_mid .div_status_bar_cont')
     },
     metal: metal,
     energy: energy

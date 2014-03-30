@@ -21,6 +21,10 @@
   border-radius: 0 0 26px 0;
 }
 
+.div_status_bar_mid {
+  min-width: 80px;
+}
+
 .status_bar_frame_gross {
   height: 18px;
   margin: 0px 0px 0px 0px;
@@ -127,6 +131,16 @@
 
 .rate_negative_small {
   color: #800;
+}
+
+.text_rate {
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: inherit;
+}
+
+.color_positive, .color_negative {
+  background-image: none;
+  color: black;
 }
 
 .icon_frame {
