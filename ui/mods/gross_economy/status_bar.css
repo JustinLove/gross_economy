@@ -130,37 +130,37 @@
 }
 
 .icon_frame {
-  padding-top: 4px;
-  padding-bottom: 6px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%; 
   margin-top: -4px;
 }
 
 .energy .icon_frame {
   margin-left: 8px;
+  background-color: yellow;
+}
+
+.metal .icon_frame {
+  background-color: #00BBFF;
 }
 
 .category_icon {
+  position: relative;
   width: 21px;
   height: 21px;
-  margin: 3px 5px 0px 12px;
 }
 
 .metal .category_icon {
   background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_metal.png) no-repeat;
+  top: 6px;
+  left: 4px;
 }
 
 .energy .category_icon {
   background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_energy.png) no-repeat;
-}
-
-@-webkit-keyframes stall {
-  0% {background-color: #400;}
-  100% {background-color: #800;}
-}
-
-.energy .economic_stall {
-  -webkit-animation: stall 2s infinite alternate ease;
+  top: 5px;
+  left: 8px;
 }
 
 .rate_wasted {
