@@ -3,9 +3,19 @@ define(['gross_economy/series'], function(series) {
     return 'rgba(255, 255, 255, ' + weight + ')'
   }
 
-  return function(resource) {
-    var gainHistory = [];
-    var lossHistory = [];
+  return function(resource, settings) {
+    switch (settings.gross_economy_resource_net) {
+      default:
+      case 'BASIC FABBER SECONDS':
+        resource.netString = resource.netStringBfs
+        break
+      case 'PERCENT':
+        resource.netString = resource.fractionString
+        break
+      case 'SIMPLE':
+        resource.netString = resource.netStringStock
+        break
+    }
     resource.currentBfs = ko.computed(function() {
       return Math.round(resource.current() / resource.tick)
     })

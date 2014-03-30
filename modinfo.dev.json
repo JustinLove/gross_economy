@@ -15,6 +15,9 @@
       "coui://ui/mods/gross_economy/require.js",
       "coui://ui/mods/gross_economy/status_bar.css",
       "coui://ui/mods/gross_economy/bootstrap.js"
+    ],
+    "settings": [
+      "coui://ui/mods/gross_economy/settings.js"
     ]
   },
   "priority": 100,

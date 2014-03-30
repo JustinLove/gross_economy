@@ -13,10 +13,13 @@ function(extendResource, judgement, html) {
     currentGain: model.metalGain,
     currentLoss: model.metalLoss,
     net: model.metalNet,
-    netString: ko.computed(function() {
+    netStringStock: model.metalNetString,
+    netStringBfs: ko.computed(function() {
       return ((model.metalNet() > 0) ? '+' : '') + Math.round(model.metalNet()/10)
     }),
-    fractionString: model.metalFractionString,
+    fractionString: ko.computed(function () {
+      return '' + (100 * model.metalFraction()).toFixed(0) + '%';
+    }),
     min: 20,
     tick: 10,
     judgement: judgement.metal,
@@ -29,17 +32,23 @@ function(extendResource, judgement, html) {
     currentGain: model.energyGain,
     currentLoss: model.energyLoss,
     net: model.energyNet,
-    netString: ko.computed(function() {
+    netStringStock: model.energyNetString,
+    netStringBfs: ko.computed(function() {
       return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/1000)
     }),
-    fractionString: model.energyFractionString,
+    fractionString: ko.computed(function () {
+      return '' + (100 * model.energyFraction()).toFixed(0) + '%';
+    }),
     min: 2000,
     tick: 1000,
     judgement: judgement.energy,
   }
 
-  extendResource(metal)
-  extendResource(energy)
+  var settings = decode(localStorage.settings)
+  console.log(settings)
+
+  extendResource(metal, settings)
+  extendResource(energy, settings)
 
   var limit = metal.limit = energy.limit = ko.computed(function() {
     if (metal.ratio() < 1) {
