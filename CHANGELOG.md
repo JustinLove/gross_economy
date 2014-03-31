@@ -1,7 +1,9 @@
 ## 3.0.0
 
 - Supply is a box with the demand bar inside
-- Moved color coding into the bar backgdrop
+- Setting for net amount display: bot fabbers, percent, or standard
+- Settable theme, classic black or, inverse: color coding in the bar backdrop
+- Now depends on Settings Manager
 
 ## 2.0.1
 
@@ -11,7 +13,7 @@
 ## 2.0
 
 - Loads in Gamma (62037)
-- Fixed range going off scale; the scale will use the range max, so it should be a little less jumpy.\
+- Fixed range going off scale; the scale will use the range max, so it should be a little less jumpy.
 
 ## 1.1
 

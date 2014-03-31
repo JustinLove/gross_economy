@@ -21,7 +21,7 @@
     ]
   },
   "priority": 100,
-  "requires": null,
+  "requires": [ "rSettingsManager" ],
   "signature": "not yet implemented",
   "version": "3.0.0"
 }
