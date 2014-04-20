@@ -3,7 +3,7 @@
   "build": "63475",
   "category": ["in-game", "ui"],
   "context": "client",
-  "date": "2014/03/30",
+  "date": "2014/04/19",
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy Dev",
   "enabled": true,
@@ -23,6 +23,6 @@
   "priority": 100,
   "requires": [ "rSettingsManager" ],
   "signature": "not yet implemented",
-  "version": "3.0.0"
+  "version": "3.0.1"
 }
 

@@ -144,6 +144,16 @@
   box-shadow: none;
 }
 
+.div_status_bar_inverse .div_status_bar_left {
+  float: right;
+  margin-right: -1px;
+}
+
+.div_status_bar_inverse .div_status_bar_right {
+  float: left;
+  margin-left: -1px;
+}
+
 .div_status_bar_inverse .div_status_bar_cont {
   border: solid #333 1px;
   border-corner-shape: bevel;
@@ -240,6 +250,16 @@
 
 /* Classic Black Colors */
 
+.div_status_bar_black .div_status_bar_left {
+  float: right;
+  margin-right: -5px;
+}
+
+.div_status_bar_black .div_status_bar_right {
+  float: left;
+  margin-left: -5px;
+}
+
 .div_status_bar_black .metal .status_bar_storage {
   background-image: -webkit-gradient(
   linear,
@@ -278,18 +298,6 @@
 
 .div_status_bar_black .status_bar_range {
   border-color: white;
-}
-
-.div_status_bar_black .status_stats {
-  xcolor: black;
-}
-
-.div_status_bar_black .rate_positive_small {
-  xcolor: #060;
-}
-
-.div_status_bar_black .rate_negative_small {
-  xcolor: #800;
 }
 
 .div_status_bar_black .rate_wasted .div_rate_ctr_overall {

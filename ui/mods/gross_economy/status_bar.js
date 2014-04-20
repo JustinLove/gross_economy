@@ -101,6 +101,7 @@ function(extendResource, judgement, html) {
   return {
     ready: function() {
       console.log("Gross Economy ready, modifing status bar");
+      $('.div_status_bar_left, .div_status_bar_right').attr('style', '')
       installTemplate($('.div_status_bar_left tr'), html, metal);
       installTemplate($('.div_status_bar_right tr'), html, energy);
       $eff = $('.div_status_bar_mid .div_status_bar_cont')

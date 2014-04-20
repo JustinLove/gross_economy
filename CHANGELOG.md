@@ -1,3 +1,7 @@
+## 3.0.1
+
+- Fix a minor styling issue.
+
 ## 3.0.0
 
 - Supply is a box with the demand bar inside
