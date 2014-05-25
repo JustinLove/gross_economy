@@ -1,16 +1,88 @@
-.div_status_bar_mid {
-  min-width: 80px;
+/**** Overall ****/
+
+.div-econ-bar {
+  position: relative;
+}
+
+div.div-eff {
+  width: 80px;
+  left: 320px;
+}
+
+div.div-metal, div.div-energy {
+  height: 50px;
+  border: none;
+}
+
+div.div-metal .contents {
+  xmargin-left: 0;
+}
+
+div.div-energy .contents {
+  margin-left: 45px;
+}
+
+div.div-metal .contents, div.div-energy .contents {
+  margin-top: 14px;
+}
+
+/***** Icon Section *****/
+
+.icon_display {
+  display: inline-block;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%; 
+  margin-top: -6px;
+  margin-bottom: -6px;
+}
+
+.div-energy .icon_display {
+  margin-left: 8px;
+  background-color: #888800;
+}
+
+.div-metal .icon_display {
+  background-color: #0088bb;
+}
+
+.category_icon {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 21px;
+  height: 21px;
+}
+
+.div-metal .category_icon {
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-metal.png) no-repeat;
+  top: 8px;
+  left: -4px;
+}
+
+.div-energy .category_icon {
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-energy.png) no-repeat;
+  top: 7px;
+  left: 8px;
+}
+
+/***** Income/Expense Bars ****/
+
+.div_status_bar_display {
+  vertical-align: top;
 }
 
 .status_bar_frame_gross {
   height: 18px;
   margin: 0px 0px 0px 0px;
-  width: 100%;
+  width: 110px;
   position: relative;
   border: none;
 }
 
 .status_bar_ticks {
+  width: 100%;
   position: relative;
   top: -2px;
 }
@@ -20,39 +92,6 @@
   height: 25px;
   width: 0px;
   border-right: solid 1px;
-}
-
-.status_bar_range {
-  border-top: solid 1px;
-  position: absolute;
-  top: 10px;
-  height: 1px;
-  z-index: 2;
-}
-
-.status_bar_storage_frame {
-  border: 1px solid;
-  border-radius: 2px;
-  margin: 0px 0px 0px 0px;
-  width: 100%;
-  height: 18px;
-  position: relative;
-}
-
-.div_storage_display {
-  position: relative;
-  display: block;
-  float: left;
-  height: 24px;
-  margin: 0px 4px 0px 5px;
-  width: 24px;
-}
-
-.status_bar_storage {
-  height: 75%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
 .status_bar_gain {
@@ -91,84 +130,81 @@
   border-bottom-width: 2px;
 }
 
+.status_bar_range {
+  border-top: solid 1px;
+  position: absolute;
+  top: 10px;
+  height: 1px;
+  z-index: 2;
+}
+
+
+/**** Net **/
+
+div.div_rate_ctr_cont, div.div_rate_ctr_overall {
+  height: 22px;
+}
+
+/****** Storage Section ******/
+
+.div_storage_display {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 70px;
+  margin-top: -3px;
+  height: 18px;
+}
+
+.status_bar_storage_frame {
+  border: 1px solid;
+  border-radius: 2px;
+  margin: 0px 0px 0px 0px;
+  width: 20px;
+  height: 9px;
+  position: relative;
+}
+
+.status_bar_storage {
+  height: 75%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
 .status_stats {
   text-align: center;
-  position: absolute;
-  bottom: 3px;
-}
-
-.icon_frame {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%; 
-  margin-top: -4px;
-}
-
-.energy .icon_frame {
-  margin-left: 8px;
-  background-color: yellow;
-}
-
-.metal .icon_frame {
-  background-color: #00BBFF;
-}
-
-.category_icon {
-  position: relative;
-  width: 21px;
-  height: 21px;
-}
-
-.metal .category_icon {
-  background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_metal.png) no-repeat;
-  top: 6px;
-  left: 4px;
-}
-
-.energy .category_icon {
-  background: url(coui://ui/main/game/live_game/img/status_bar/icon_status_energy.png) no-repeat;
-  top: 5px;
-  left: 8px;
-}
-
-.div_rate_ctr_overall {
-  padding: 4px;
-  margin-top: -6px;
 }
 
 /* Inverse Colors */
 
-.div_status_bar_inverse .div_status_bar_left,
-.div_status_bar_inverse .div_status_bar_right {
+.div_status_bar_inverse .div-eff {
+  border: solid #333 1px;
+  border-corner-shape: bevel;
+  background: #888;
+  color: black;
+}
+
+.div_status_bar_inverse .div-metal,
+.div_status_bar_inverse .div-energy {
   border: none;
-  box-shadow: none;
 }
 
-.div_status_bar_inverse .div_status_bar_left {
-  float: right;
-  margin-right: -1px;
-}
-
-.div_status_bar_inverse .div_status_bar_right {
-  float: left;
-  margin-left: -1px;
-}
-
-.div_status_bar_inverse .div_status_bar_cont {
+.div_status_bar_inverse .contents {
   border: solid #333 1px;
   border-corner-shape: bevel;
   background-color: #888;
   color: black;
 }
 
-.div_status_bar_inverse .div_status_bar_left .div_status_bar_cont {
-  padding: 7px 7px 0px 26px ;
-  border-radius: 0 0 0 26px;
+.div_status_bar_inverse .div-metal .contents {
+  padding: 7px 7px 0px 22px ;
+  border-radius: 0 0 0 22px;
 }
 
-.div_status_bar_inverse .div_status_bar_right .div_status_bar_cont {
-  padding: 7px 26px 0px 0px ;
-  border-radius: 0 0 26px 0;
+.div_status_bar_inverse .div-energy .contents {
+  padding: 7px 22px 0px 0px ;
+  border-radius: 0 0 22px 0;
 }
 
 .div_status_bar_inverse .status_bar_storage_frame {
@@ -219,7 +255,6 @@
 
 .div_status_bar_inverse .color_positive,
 .div_status_bar_inverse .color_negative {
-  background-image: none;
   color: black;
 }
 
@@ -248,19 +283,10 @@
   color: white;
 }
 
+
 /* Classic Black Colors */
 
-.div_status_bar_black .div_status_bar_left {
-  float: right;
-  margin-right: -5px;
-}
-
-.div_status_bar_black .div_status_bar_right {
-  float: left;
-  margin-left: -5px;
-}
-
-.div_status_bar_black .metal .status_bar_storage {
+.div_status_bar_black .div-metal .status_bar_storage {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -270,7 +296,7 @@
   );
 }
 
-.div_status_bar_black .energy .status_bar_storage {
+.div_status_bar_black .div-energy .status_bar_storage {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -344,3 +370,4 @@
   color: black;
   background-color: red;
 }
+

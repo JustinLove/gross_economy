@@ -76,7 +76,7 @@ function(extendResource, judgement, html) {
 
   effColoration.subscribe(function(value) {
     if ($eff) {
-      $eff.attr('class', "div_status_bar_cont " + value)
+      $eff.attr('class', "div-eff " + value)
     }
   })
 
@@ -92,20 +92,20 @@ function(extendResource, judgement, html) {
   
 
   var installTemplate = function ($parent, html, model) {
-    $parent.addClass(model.resource)
+    //$parent.parent().attr('data-bind', '')
     $parent.html(html)
-    model.$parent = $parent.parents('.div_status_bar_cont')
+    model.$parent = $parent
     ko.applyBindings(model, $parent[0]);
   };
 
   return {
     ready: function() {
       console.log("Gross Economy ready, modifing status bar");
-      $('.div_status_bar_left, .div_status_bar_right').attr('style', '')
-      installTemplate($('.div_status_bar_left tr'), html, metal);
-      installTemplate($('.div_status_bar_right tr'), html, energy);
-      $eff = $('.div_status_bar_mid .div_status_bar_cont')
-      $('.div_status_bar').addClass(theme)
+      //$('.div_status_bar_left, .div_status_bar_right').attr('style', '')
+      installTemplate($('.div-metal .contents'), html, metal);
+      installTemplate($('.div-energy .contents'), html, energy);
+      $eff = $('.div-eff')
+      $('.div-econ-bar').addClass(theme)
     },
     metal: metal,
     energy: energy

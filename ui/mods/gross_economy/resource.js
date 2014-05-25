@@ -84,7 +84,7 @@ define(['gross_economy/series'], function(series) {
 
     resource.coloration.subscribe(function(value) {
       if (resource.$parent) {
-        resource.$parent.attr('class', "div_status_bar_cont " + value)
+        resource.$parent.attr('class', 'contents ' + value)
       }
     })
 
