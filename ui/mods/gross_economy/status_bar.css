@@ -1,7 +1,7 @@
 /**** Overall ****/
 
 .gross-economy-bar {
-  width: 740px;
+  width: 720px;
   margin: 0 auto 0;
   text-align: center;
   font-family:'Droid Sans Mono';
@@ -12,7 +12,6 @@
   width: 49%;
   text-align: right;
   display: inline-block;
-  vertical-align: top;
 }
 
 
@@ -24,16 +23,26 @@
 
 .contents {
   height: 35px;
+  position: relative;
+}
+
+.ge-icon-segment,
+.ge-bar-segment,
+.ge-gross-segment,
+.ge-net-segment,
+.ge-storage-segment {
+  display: inline-block;
+  height: 30px;
+  vertical-align: top;
+  margin-top: 4px;
 }
 
 .metal .contents {
   float:left;
-  xmargin-left: 20px;
 }
 
 .energy .contents {
   float:right;
-  xmargin-right: 20px;
 }
 
 /**** Overall Efficiency ****/
@@ -41,34 +50,16 @@
 .gross-economy-eff {
   width: 80px;
   height: 35px;
-  left: 330px;
+  left: 320px;
   text-align: center;
-  xmargin: 0px auto;
-  xpadding: 16px 0px 0px 0px;
   z-index: 1;
   position: absolute;
   font-family: 'Armata Regular';
 }
 
-.gross-economy-eff .build_eff_text {
-  xfont-size: 9px;
-  xmargin: 0px 0px -2px 0px;
-  xtext-transform: uppercase;
-  xcolor: #fff;
-}
-
-.gross-economy-eff .div_rate_ctr_perc_center {
-  xfont-size: 16px;
-  xfont-weight: bold;
-  xmargin: 0px 0px 0px 0px;
-}
-
 /***** Icon Section *****/
 
 .ge-icon-segment {
-  display: inline-block;
-  xmargin-top: -6px;
-  xmargin-bottom: -6px;
   width: 30px;
 }
 
@@ -81,7 +72,6 @@
 }
 
 .energy .ge-icon-background {
-  xmargin-left: 8px;
   background-color: #888800;
 }
 
@@ -90,8 +80,6 @@
 }
 
 .ge-category-icon {
-  xdisplay: inline-block;
-  xvertical-align: top;
   position: absolute;
   width: 21px;
   height: 21px;
@@ -111,22 +99,8 @@
 
 /***** Supply/Demand Bars ****/
 
-.ge-bar-segment {
-  display: inline-block;
-  xvertical-align: top;
-}
-
-.ge-bar-frame {
-  width: 110px;
-  height: 18px;
-  xmargin: 0px 0px 0px 0px;
-  position: relative;
-}
-
 .ge-bar-ticks {
-  width: 100%;
   position: relative;
-  xtop: -2px;
 }
 
 .ge-tick {
@@ -136,11 +110,17 @@
   border-right: solid 1px;
 }
 
+.ge-bar-frame {
+  width: 110px;
+  height: 18px;
+  position: relative;
+}
+
 .ge-bar-gain {
   position: absolute;
   top: 4px;
   height: 18px;
-  width: 75%d
+  width: 75%;
   z-index: 0;
   border: solid 2px;
 }
@@ -183,8 +163,7 @@
 /**** Gross **/
 
 .ge-gross-segment {
-  width: 40px;
-  display: inline-block;
+  width: 35px;
   overflow: visible;
   font-size: 9px;
   font-family: 'Armata Regular';
@@ -194,33 +173,25 @@
 /***** Net ****/
 
 .ge-net-segment {
-  width: 70px;
-  display: inline-block;
+  width: 50px;
   overflow: visible;
   font-size: 14px;
   font-family: 'Armata Regular';
-  text-align: left;
+  text-align: right;
 }
 
 .ge-net {
-  float: left;
+  float: right;
   padding: 2px 4px;
 }
 
 /****** Storage Section ******/
-
-.ge-storage-segment {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-}
 
 .ge-storage-number {
   font-size: 9px;
   text-align: center;
   width: 100%;
   display: block;
-  margin-top: 5px;
 }
 
 .ge-storage-frame {
@@ -245,6 +216,19 @@
   border-top: none;
   border-corner-shape: bevel;
   background: #888;
+  color: black;5
+}
+
+.ge-color-inverse .build_eff_text {
+  color: black;
+}
+
+.ge-color-inverse .div_rate_ctr_perc_center {
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: inherit;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
   color: black;
 }
 
@@ -257,12 +241,12 @@
 }
 
 .ge-color-inverse .metal .contents {
-  padding: 0px 7px 0px 22px ;
+  padding: 0px 50px 0px 22px ;
   border-radius: 0 0 0 22px;
 }
 
 .ge-color-inverse .energy .contents {
-  padding: 0px 22px 0px 7px ;
+  padding: 0px 22px 0px 50px ;
   border-radius: 0 0 22px 0;
 }
 
