@@ -1,125 +1,167 @@
 /**** Overall ****/
 
-.div-econ-bar {
+.gross-economy-bar {
+  width: 740px;
+  margin: 0 auto 0;
+  text-align: center;
+  font-family:'Droid Sans Mono';
   position: relative;
 }
 
-div.div-eff {
+.metal {
+  width: 49%;
+  text-align: right;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.energy {
+  width: 49%;
+  text-align: left;
+  display: inline-block;
+}
+
+.contents {
+  height: 35px;
+}
+
+.metal .contents {
+  float:left;
+  xmargin-left: 20px;
+}
+
+.energy .contents {
+  float:right;
+  xmargin-right: 20px;
+}
+
+/**** Overall Efficiency ****/
+
+.gross-economy-eff {
   width: 80px;
-  left: 320px;
+  height: 35px;
+  left: 330px;
+  text-align: center;
+  xmargin: 0px auto;
+  xpadding: 16px 0px 0px 0px;
+  z-index: 1;
+  position: absolute;
+  font-family: 'Armata Regular';
 }
 
-div.div-metal, div.div-energy {
-  height: 50px;
-  border: none;
+.gross-economy-eff .build_eff_text {
+  xfont-size: 9px;
+  xmargin: 0px 0px -2px 0px;
+  xtext-transform: uppercase;
+  xcolor: #fff;
 }
 
-div.div-metal .contents {
-  xmargin-left: 0;
-}
-
-div.div-energy .contents {
-  margin-left: 45px;
-}
-
-div.div-metal .contents, div.div-energy .contents {
-  margin-top: 14px;
+.gross-economy-eff .div_rate_ctr_perc_center {
+  xfont-size: 16px;
+  xfont-weight: bold;
+  xmargin: 0px 0px 0px 0px;
 }
 
 /***** Icon Section *****/
 
-.icon_display {
+.ge-icon-segment {
   display: inline-block;
-  vertical-align: top;
+  xmargin-top: -6px;
+  xmargin-bottom: -6px;
+  width: 30px;
+}
+
+.ge-icon-background {
   width: 30px;
   height: 30px;
   border-radius: 100%; 
-  margin-top: -6px;
-  margin-bottom: -6px;
+  position: absolute;
+  top: 2px;
 }
 
-.div-energy .icon_display {
-  margin-left: 8px;
+.energy .ge-icon-background {
+  xmargin-left: 8px;
   background-color: #888800;
 }
 
-.div-metal .icon_display {
+.metal .ge-icon-background {
   background-color: #0088bb;
 }
 
-.category_icon {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
+.ge-category-icon {
+  xdisplay: inline-block;
+  xvertical-align: top;
+  position: absolute;
   width: 21px;
   height: 21px;
 }
 
-.div-metal .category_icon {
+.metal .ge-category-icon {
   background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-metal.png) no-repeat;
-  top: 8px;
-  left: -4px;
+  top: 7px;
+  left: 5px;
 }
 
-.div-energy .category_icon {
+.energy .ge-category-icon {
   background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-energy.png) no-repeat;
   top: 7px;
   left: 8px;
 }
 
-/***** Income/Expense Bars ****/
+/***** Supply/Demand Bars ****/
 
-.div_status_bar_display {
-  vertical-align: top;
+.ge-bar-segment {
+  display: inline-block;
+  xvertical-align: top;
 }
 
-.status_bar_frame_gross {
-  height: 18px;
-  margin: 0px 0px 0px 0px;
+.ge-bar-frame {
   width: 110px;
+  height: 18px;
+  xmargin: 0px 0px 0px 0px;
   position: relative;
-  border: none;
 }
 
-.status_bar_ticks {
+.ge-bar-ticks {
   width: 100%;
   position: relative;
-  top: -2px;
+  xtop: -2px;
 }
 
-.status_bar_tick {
+.ge-tick {
   position: absolute;
   height: 25px;
   width: 0px;
   border-right: solid 1px;
 }
 
-.status_bar_gain {
+.ge-bar-gain {
   position: absolute;
-  top: 2px;
+  top: 4px;
   height: 18px;
-  width: 75%;
+  width: 75%d
   z-index: 0;
   border: solid 2px;
 }
 
-.status_bar_loss {
+.ge-bar-loss {
   position: absolute;
-  top: 7px;
+  top: 9px;
   height: 8px;
   width: 75%;
   z-index: 1;
 }
 
-.status_bar_to_storage {
+.ge-bar-to-storage {
   position: absolute;
   height: 8px;
   width: 0;
-  top: 7px;
+  top: 9px;
   z-index: 1;
 }
 
-.status_bar_from_storage {
+.ge-bar-from-storage {
   position: absolute;
   height: 18px;
   width: 0;
@@ -130,7 +172,7 @@ div.div-metal .contents, div.div-energy .contents {
   border-bottom-width: 2px;
 }
 
-.status_bar_range {
+.ge-bar-range {
   border-top: solid 1px;
   position: absolute;
   top: 10px;
@@ -138,155 +180,165 @@ div.div-metal .contents, div.div-energy .contents {
   z-index: 2;
 }
 
+/**** Gross **/
 
-/**** Net **/
+.ge-gross-segment {
+  width: 40px;
+  display: inline-block;
+  overflow: visible;
+  font-size: 9px;
+  font-family: 'Armata Regular';
+  text-align: right;
+}
 
-div.div_rate_ctr_cont, div.div_rate_ctr_overall {
-  height: 22px;
+/***** Net ****/
+
+.ge-net-segment {
+  width: 70px;
+  display: inline-block;
+  overflow: visible;
+  font-size: 14px;
+  font-family: 'Armata Regular';
+  text-align: left;
+}
+
+.ge-net {
+  float: left;
+  padding: 2px 4px;
 }
 
 /****** Storage Section ******/
 
-.div_storage_display {
-  position: relative;
+.ge-storage-segment {
   display: inline-block;
-  vertical-align: middle;
-  margin-left: 70px;
-  margin-top: -3px;
-  height: 18px;
+  position: relative;
+  vertical-align: top;
 }
 
-.status_bar_storage_frame {
+.ge-storage-number {
+  font-size: 9px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+}
+
+.ge-storage-frame {
   border: 1px solid;
   border-radius: 2px;
-  margin: 0px 0px 0px 0px;
   width: 20px;
   height: 9px;
   position: relative;
 }
 
-.status_bar_storage {
+.ge-storage-fill {
   height: 75%;
   width: 100%;
   position: absolute;
   bottom: 0;
 }
 
-.status_stats {
-  text-align: center;
-}
-
 /* Inverse Colors */
 
-.div_status_bar_inverse .div-eff {
+.ge-color-inverse .gross-economy-eff {
   border: solid #333 1px;
+  border-top: none;
   border-corner-shape: bevel;
   background: #888;
   color: black;
 }
 
-.div_status_bar_inverse .div-metal,
-.div_status_bar_inverse .div-energy {
-  border: none;
-}
-
-.div_status_bar_inverse .contents {
+.ge-color-inverse .contents {
   border: solid #333 1px;
+  border-top: none;
   border-corner-shape: bevel;
   background-color: #888;
   color: black;
 }
 
-.div_status_bar_inverse .div-metal .contents {
-  padding: 7px 7px 0px 22px ;
+.ge-color-inverse .metal .contents {
+  padding: 0px 7px 0px 22px ;
   border-radius: 0 0 0 22px;
 }
 
-.div_status_bar_inverse .div-energy .contents {
-  padding: 7px 22px 0px 0px ;
+.ge-color-inverse .energy .contents {
+  padding: 0px 22px 0px 7px ;
   border-radius: 0 0 22px 0;
 }
 
-.div_status_bar_inverse .status_bar_storage_frame {
+.ge-color-inverse .ge-storage-frame {
   border-color: black;
   background-color: #888;
 }
 
-.div_status_bar_inverse .status_bar_storage {
+.ge-color-inverse .ge-storage-fill {
   background-color: white;
 }
 
-.div_status_bar_inverse .status_bar_gain {
+.ge-color-inverse .ge-bar-gain {
   border-color: black;
 }
 
-.div_status_bar_inverse .status_bar_loss {
+.ge-color-inverse .ge-bar-loss {
   background-color: black;
 }
 
-.div_status_bar_inverse .status_bar_to_storage {
+.ge-color-inverse .ge-bar-to-storage {
   background-color: white;
 }
 
-.div_status_bar_inverse .status_bar_from_storage {
+.ge-color-inverse .ge-bar-from-storage {
   border-color: white;
 }
 
-.div_status_bar_inverse .status_bar_range {
+.ge-color-inverse .ge-bar-range {
   border-color: #888;
 }
 
-.div_status_bar_inverse .status_stats {
-  color: black;
-}
-
-.div_status_bar_inverse .rate_positive_small {
+.ge-color-inverse .ge-gross-supply {
   color: #060;
 }
 
-.div_status_bar_inverse .rate_negative_small {
+.ge-color-inverse .ge-gross-demand {
   color: #800;
 }
 
-.div_status_bar_inverse .text_rate {
-  -webkit-background-clip: none;
-  -webkit-text-fill-color: inherit;
-}
-
-.div_status_bar_inverse .color_positive,
-.div_status_bar_inverse .color_negative {
+.ge-color-inverse .ge-net {
   color: black;
 }
 
-.div_status_bar_inverse .rate_wasted {
+.ge-color-inverse .ge-storage-number {
+  color: white;
+}
+
+.ge-color-inverse .rate-wasted {
   background-color: #6cf;
 }
 
-.div_status_bar_inverse .rate_good {
+.ge-color-inverse .rate-good {
   background-color: #0a0;
 }
 
-.div_status_bar_inverse .rate_warning {
+.ge-color-inverse .rate-warning {
   background-color: #dd0;
 }
 
-.div_status_bar_inverse .rate_danger {
+.ge-color-inverse .rate-danger {
   background-color: orange;
 }
 
-.div_status_bar_inverse .rate_critical {
+.ge-color-inverse .rate-critical {
   background-color: red;
 }
 
-.div_status_bar_inverse .economic_limit .div_rate_ctr_overall {
+.ge-color-inverse .economic-limit .ge-net {
   background-color: black;
   color: white;
 }
 
-
 /* Classic Black Colors */
 
-.div_status_bar_black .div-metal .status_bar_storage {
+.ge-color-black .metal .ge-storage-fill {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -296,7 +348,7 @@ div.div_rate_ctr_cont, div.div_rate_ctr_overall {
   );
 }
 
-.div_status_bar_black .div-energy .status_bar_storage {
+.ge-color-black .energy .ge-storage-fill {
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -306,67 +358,71 @@ div.div_rate_ctr_cont, div.div_rate_ctr_overall {
   );
 }
 
-.div_status_bar_black .status_bar_gain {
+.ge-color-black .ge-bar-gain {
   border-color: #0B0;
 }
 
-.div_status_bar_black .status_bar_loss {
+.ge-color-black .ge-bar-loss {
   background-color: red;
 }
 
-.div_status_bar_black .status_bar_to_storage {
+.ge-color-black .ge-bar-to-storage {
   background-color: #B00;
 }
 
-.div_status_bar_black .status_bar_from_storage {
+.ge-color-black .ge-bar-from-storage {
   border-color: #080;
 }
 
-.div_status_bar_black .status_bar_range {
+.ge-color-black .ge-bar-range {
   border-color: white;
 }
 
-.div_status_bar_black .rate_wasted .div_rate_ctr_overall {
+.ge-color-black .ge-storage-number {
+  color: #D1D1D1;
+}
+
+.ge-color-black .rate-wasted .ge-net {
   color: #6cf;
 }
 
-.div_status_bar_black .rate_good .div_rate_ctr_overall {
+.ge-color-black .rate-good .ge-net {
   color: #0a0;
 }
 
-.div_status_bar_black .rate_warning .div_rate_ctr_overall {
+.ge-color-black .rate-warning .ge-net {
   color: #dd0;
 }
 
-.div_status_bar_black .rate_danger .div_rate_ctr_overall {
+.ge-color-black .rate-danger .ge-net {
   color: orange;
 }
 
-.div_status_bar_black .rate_critical .div_rate_ctr_overall {
+.ge-color-black .rate-critical .ge-net {
   color: red;
 }
 
-.div_status_bar_black .rate_wasted .economic_limit .div_rate_ctr_overall {
+.ge-color-black .rate-wasted .economic-limit .ge-net {
   color: black;
   background-color: #6cf;
 }
 
-.div_status_bar_black .rate_good .economic_limit  .div_rate_ctr_overall {
+.ge-color-black .rate-good .economic-limit  .ge-net {
   color: black;
   background-color: #0a0;
 }
 
-.div_status_bar_black .rate_warning .economic_limit  .div_rate_ctr_overall {
+.ge-color-black .rate-warning .economic-limit  .ge-net {
   color: black;
   background-color: #dd0;
 }
 
-.div_status_bar_black .rate_danger .economic_limit  .div_rate_ctr_overall {
+.ge-color-black .rate-danger .economic-limit  .ge-net {
   color: black;
   background-color: orange;
 }
 
-.div_status_bar_black .rate_critical .economic_limit .div_rate_ctr_overall {
+.ge-color-black .rate-critical .economic-limit .ge-net {
   color: black;
   background-color: red;
 }

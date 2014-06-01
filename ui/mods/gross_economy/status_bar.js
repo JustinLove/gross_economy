@@ -76,7 +76,7 @@ function(extendResource, judgement, html) {
 
   effColoration.subscribe(function(value) {
     if ($eff) {
-      $eff.attr('class', "div-eff " + value)
+      $eff.attr('class', "gross-economy-eff " + value)
     }
   })
 
@@ -84,15 +84,15 @@ function(extendResource, judgement, html) {
     switch (settings.gross_economy_theme) {
       default:
       case 'INVERSE':
-        return 'div_status_bar_inverse'
+        return 'ge-color-inverse'
       case 'CLASSIC BLACK':
-        return 'div_status_bar_black'
+        return 'ge-color-black'
     }
   }
   
 
   var installTemplate = function ($parent, html, model) {
-    //$parent.parent().attr('data-bind', '')
+    $parent.parent().attr('class', model.resource)
     $parent.html(html)
     model.$parent = $parent
     ko.applyBindings(model, $parent[0]);
@@ -101,11 +101,10 @@ function(extendResource, judgement, html) {
   return {
     ready: function() {
       console.log("Gross Economy ready, modifing status bar");
-      //$('.div_status_bar_left, .div_status_bar_right').attr('style', '')
       installTemplate($('.div-metal .contents'), html, metal);
       installTemplate($('.div-energy .contents'), html, energy);
-      $eff = $('.div-eff')
-      $('.div-econ-bar').addClass(theme)
+      $eff = $('.div-eff').attr('class', 'gross-economy-eff')
+      $('.div-econ-bar').attr('class', 'gross-economy-bar ignoreMouse ' + theme())
     },
     metal: metal,
     energy: energy

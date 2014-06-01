@@ -75,7 +75,7 @@ define(['gross_economy/series'], function(series) {
       var denom = resource.currentLoss()
       if (denom < 1) {denom = 1}
       var ratio = resource.currentGain() / denom
-      return 'rate_' + resource.judgement(storage, ratio)
+      return 'rate-' + resource.judgement(storage, ratio)
     })
 
     resource.coloration = ko.observable()
