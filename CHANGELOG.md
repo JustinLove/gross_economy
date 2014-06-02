@@ -1,3 +1,9 @@
+## 4.0.0
+
+- Update for Galactic phase UI
+- Nuke the CSS from orbit, it's the only way to be sure
+- Add icon
+
 ## 3.0.1
 
 - Fix a minor styling issue.
