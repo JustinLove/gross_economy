@@ -69,11 +69,23 @@
 }
 
 .energy .ge-icon-background {
-  background-color: #888800;
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #F9EC31),
+  color-stop(0, #ADA100)
+  );
 }
 
 .metal .ge-icon-background {
-  background-color: #0088bb;
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #00BBFF),
+  color-stop(0, #0279A1)
+  );
 }
 
 .ge-category-icon {
