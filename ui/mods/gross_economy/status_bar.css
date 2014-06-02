@@ -1,7 +1,7 @@
 /**** Overall ****/
 
 .gross-economy-bar {
-  width: 720px;
+  width: 740px;
   margin: 0 auto 0;
   text-align: center;
   font-family:'Droid Sans Mono';
@@ -50,7 +50,7 @@
 .gross-economy-eff {
   width: 80px;
   height: 35px;
-  left: 320px;
+  left: 330px;
   text-align: center;
   z-index: 1;
   position: absolute;
@@ -188,6 +188,8 @@
 /****** Storage Section ******/
 
 .ge-storage-number {
+  position: absolute;
+  bottom: 0;
   font-size: 9px;
   text-align: center;
   width: 100%;
@@ -197,8 +199,8 @@
 .ge-storage-frame {
   border: 1px solid;
   border-radius: 2px;
-  width: 20px;
-  height: 9px;
+  width: 30px;
+  height: 25px;
   position: relative;
 }
 
@@ -292,7 +294,7 @@
 }
 
 .ge-color-inverse .ge-storage-number {
-  color: white;
+  color: black;
 }
 
 .ge-color-inverse .rate-wasted {
