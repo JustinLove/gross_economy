@@ -1,7 +1,6 @@
 /**** Overall ****/
 
 .gross-economy-bar {
-  width: 740px;
   margin: 0 auto 0;
   text-align: center;
   font-family:'Droid Sans Mono';
@@ -48,9 +47,7 @@
 /**** Overall Efficiency ****/
 
 .gross-economy-eff {
-  width: 80px;
   height: 35px;
-  left: 330px;
   text-align: center;
   z-index: 1;
   position: absolute;
@@ -213,7 +210,13 @@
 
 /* Inverse Colors */
 
+.ge-color-inverse.gross-economy-bar {
+  width: 740px;
+}
+
 .ge-color-inverse .gross-economy-eff {
+  width: 80px;
+  left: 330px;
   border: solid #333 1px;
   border-top: none;
   border-corner-shape: bevel;
@@ -324,6 +327,34 @@
 
 /* Classic Black Colors */
 
+.ge-color-black.gross-economy-bar {
+  width: 820px;
+}
+
+.ge-color-black .gross-economy-eff {
+  width: 150px;
+  left: 335px;
+  background: url('coui://ui/main/game/live_game/img/status_bar/img-efficiency-bground.png') 0 -15px no-repeat;
+}
+
+.ge-color-black .metal {
+  border-image: url('coui://ui/main/game/live_game/img/status_bar/img-econ-bar-left.png') 60 25 0 51 fill;
+  border-width: 60px 25px 0px 51px;
+  margin-right: -17px;
+  margin-top: -15px;
+}
+
+.ge-color-black .energy {
+  border-image: url('coui://ui/main/game/live_game/img/status_bar/img-econ-bar-right.png') 60 51 0 25 fill;
+  border-width: 60px 51px 0px 25px;
+  margin-left: -17px;
+  margin-top: -15px;
+}
+
+.ge-color-black .contents {
+  margin-top: -47px;
+}
+
 .ge-color-black .metal .ge-storage-fill {
   background-image: -webkit-gradient(
   linear,
@@ -364,8 +395,16 @@
   border-color: white;
 }
 
+.ge-color-black .ge-gross-supply {
+  color: #0B0;
+}
+
+.ge-color-black .ge-gross-demand {
+  color: red; 
+}
+
 .ge-color-black .ge-storage-number {
-  color: #D1D1D1;
+  color: white;
 }
 
 .ge-color-black .rate-wasted .ge-net {
