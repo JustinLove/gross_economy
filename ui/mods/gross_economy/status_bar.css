@@ -1,6 +1,7 @@
 /**** Overall ****/
 
 .gross-economy-bar {
+  height: 80px;
   margin: 0 auto 0;
   text-align: center;
   font-family:'Droid Sans Mono';
@@ -42,6 +43,10 @@
 
 .energy .contents {
   float:right;
+}
+
+.tooltip {
+  text-transform: uppercase;
 }
 
 /**** Overall Efficiency ****/

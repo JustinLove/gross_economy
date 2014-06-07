@@ -1,4 +1,4 @@
-<div class="ge-icon-segment" data-bind="css: {'economic-stall': ratio() < 1}">
+<div class="ge-icon-segment" data-bind="css: {'economic-stall': ratio() < 1}, tooltip: resource" data-placement="bottom">
   <div class="ge-icon-background">
     <div class="ge-category-icon"></div>
   </div>
@@ -8,18 +8,18 @@
     <div class="ge-tick" data-bind="style: {left: x, borderColor: color}"></div>
   </div>
   <div class="ge-bar-frame" data-bind="css: { 'ge-bar-frame': !showSharedResources(), 'ge-bar-frame-narrow': showSharedResources() }">
-    <div class="ge-bar-range" data-bind="style: { left: loss.rangeStart, width: loss.rangeEnd}"></div>
-    <div class="ge-bar-loss" data-bind="style: { width: loss.percent() }"> </div>
-    <div class="ge-bar-to-storage" data-bind="style: { left: loss.percent(), width: toStorage() }"> </div>
-    <div class="ge-bar-gain" data-bind="style: { width: gain.percent() }"> </div>
-    <div class="ge-bar-from-storage" data-bind="style: { left: gain.percent(), width: fromStorage() }"> </div>
+    <div class="ge-bar-range" data-bind="style: { left: loss.rangeStart, width: loss.rangeEnd}, tooltip: '30s RANGE'" data-placement="bottom"></div>
+    <div class="ge-bar-loss" data-bind="style: { width: loss.percent() }, tooltip: resource + ' expended'" data-placement="bottom"> </div>
+    <div class="ge-bar-to-storage" data-bind="style: { left: loss.percent(), width: toStorage() }, tooltip: resource + ' to storage'" data-placement="bottom"> </div>
+    <div class="ge-bar-gain" data-bind="style: { width: gain.percent() }, tooltip: resource + ' produced'" data-placement="bottom"> </div>
+    <div class="ge-bar-from-storage" data-bind="style: { left: gain.percent(), width: fromStorage() }, tooltip: resource + ' from storage'" data-placement="bottom"> </div>
   </div>
 </div>
 <div class="ge-gross-segment">
-  <div class="ge-gross-demand" data-bind="text: loss.value">-8888</div>
-  <div class="ge-gross-supply" data-bind="text: gain.value">+8888</div>
+  <div class="ge-gross-demand" data-bind="text: loss.value, tooltip: resource + ' produced'" data-placement="bottom">-8888</div>
+  <div class="ge-gross-supply" data-bind="text: gain.value, tooltip: resource + ' expended'" data-placement="bottom">+8888</div>
 </div>
-<div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}">
+<div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}, tooltip: 'net ' + resource + ' INCOME'" data-placement="bottom">
   <div class="ge-net" data-bind="text: netString">+8888</div>
 </div>
 <div class="ge-shared-segment" data-placement="bottom" data-bind="foreach: sharedArray, tooltip: sharedTooltip, visible: showSharedResources">
@@ -32,7 +32,7 @@
         <!-- /ko -->
     </div>
 </div>
-<div class="ge-storage-segment">
+<div class="ge-storage-segment" data-bind="tooltip: resource + ' storage'" data-placement="bottom">
   <div class="ge-storage-frame">
     <div class="ge-storage-fill" data-bind="style: { height: fractionString() }"></div>
     <div class="ge-storage-number">

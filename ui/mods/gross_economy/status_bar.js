@@ -100,7 +100,7 @@ function(extendResource, judgement, html) {
   
 
   var installTemplate = function ($parent, html, model) {
-    $parent.parent().attr('class', model.resource)
+    $parent.parent().attr('class', model.resource + ' receiveMouse')
     $parent.html(html)
     model.$parent = $parent
     ko.applyBindings(model, $parent[0]);
