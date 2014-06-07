@@ -125,6 +125,12 @@
   position: relative;
 }
 
+.ge-bar-frame-narrow {
+  width: 90px;
+  height: 18px;
+  position: relative;
+}
+
 .ge-bar-gain {
   position: absolute;
   top: 4px;
@@ -193,6 +199,20 @@
   float: right;
   padding: 2px 4px;
 }
+
+/***** Shared Resources ****/
+
+.ge-shared-segment {
+  display: inline-block;
+  width: 14px;
+  margin-top: 7px;
+}
+
+.ge-shared-resource-icon {
+  display: inline-block;
+  margin-left: -7px;
+}
+
 
 /****** Storage Section ******/
 

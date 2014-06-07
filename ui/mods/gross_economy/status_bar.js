@@ -20,6 +20,10 @@ function(extendResource, judgement, html) {
     fractionString: ko.computed(function () {
       return '' + (100 * model.metalFraction()).toFixed(0) + '%';
     }),
+    shared: model.metalShared,
+    sharedArray: model.sharedMetalArray,
+    sharedTooltip: model.sharedMetalTooltip,
+    showSharedResources: model.showSharedResources,
     min: 20,
     tick: 10,
     judgement: judgement.metal,
@@ -39,6 +43,10 @@ function(extendResource, judgement, html) {
     fractionString: ko.computed(function () {
       return '' + (100 * model.energyFraction()).toFixed(0) + '%';
     }),
+    shared: model.energyShared,
+    sharedArray: model.sharedEnergyArray,
+    sharedTooltip: model.sharedEnergyTooltip,
+    showSharedResources: model.showSharedResources,
     min: 2000,
     tick: 1000,
     judgement: judgement.energy,
