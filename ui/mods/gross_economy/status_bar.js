@@ -1,12 +1,10 @@
 define([
   'gross_economy/resource',
   'gross_economy/judgement',
-  'gross_economy/fake_economy',
   'text!gross_economy/status_bar_resource.html'
 ], function(
   extendResource,
   judgement,
-  fake,
   html
 ) {
   "use strict";
@@ -121,11 +119,9 @@ define([
       $eff = $('.div-eff').attr('class', 'gross-economy-eff')
       $('.div-econ-bar').attr('class', 'gross-economy-bar ignoreMouse ' + theme())
 
-      setTimeout(function() {
-        //model.showSharedResources(true)
-        fake.update()
-      }, 1000)
-
+      //require(['gross_economy/fake_economy'], function(fake) {
+        //setTimeout(function() { fake.update() }, 1000)
+      //})
     },
     metal: metal,
     energy: energy
