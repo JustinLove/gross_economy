@@ -1,3 +1,11 @@
+## PTE
+
+- Implement shared resources, in same manner as storage.  Color up in air, don't like any of them.
+- Dev: routines to fake economy data
+- Major refactoring of bars
+- Implement tooltips as in main game
+- Borrow metric units from main game
+
 ## 4.0.0
 
 - Update for Galactic phase UI
