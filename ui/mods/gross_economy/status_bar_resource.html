@@ -7,7 +7,7 @@
   <div class="ge-bar-ticks" data-bind="foreach: ticks">
     <div class="ge-tick" data-bind="style: {left: x, borderColor: color}"></div>
   </div>
-  <div class="ge-bar-frame" data-bind="css: { 'ge-bar-frame': !showSharedResources(), 'ge-bar-frame-narrow': showSharedResources() }, foreach: bars">
+  <div class="ge-bar-frame" data-bind="foreach: bars">
     <div data-bind="attr: {class: name}, style: { left: left, width: width}, tooltip: tooltip" data-placement="bottom"></div>
   </div>
 </div>
@@ -17,16 +17,6 @@
 </div>
 <div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}, tooltip: 'net ' + resource + ' INCOME'" data-placement="bottom">
   <div class="ge-net" data-bind="text: netString">+8888</div>
-</div>
-<div class="ge-shared-segment" data-placement="bottom" data-bind="foreach: sharedArray, tooltip: sharedTooltip, visible: showSharedResources">
-    <div class="ge-shared-resource-icon">
-        <!-- ko if: $parent.shared() < 0 -->
-        <img src="img/status_bar/icon_resource_sharing_give.png" />
-        <!-- /ko -->
-        <!-- ko if: $parent.shared() >= 0 -->
-        <img src="img/status_bar/icon_resource_sharing_receive.png" />
-        <!-- /ko -->
-    </div>
 </div>
 <div class="ge-storage-segment" data-bind="tooltip: resource + ' storage'" data-placement="bottom">
   <div class="ge-storage-frame">
