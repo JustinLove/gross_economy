@@ -1,7 +1,12 @@
 (function() {
   model.addSetting_DropDown(
     'Resource Net', 'gross_economy_resource_net', 'UI',
-    ['BASIC FABBER SECONDS', 'PERCENT', 'SIMPLE'], 0,
+    ['BASIC FABBER SECONDS', 'EFFICIENCY', 'SIMPLE'], 0,
+    'Gross Economy')
+
+  model.addSetting_DropDown(
+    'Resource Storage', 'gross_economy_resource_storage', 'UI',
+    ['BASIC FABBER SECONDS', 'PERCENT', 'SIMPLE'], 2,
     'Gross Economy')
 
   model.addSetting_DropDown(

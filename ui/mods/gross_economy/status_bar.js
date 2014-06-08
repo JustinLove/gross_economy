@@ -14,14 +14,18 @@ define([
   var metal = {
     resource: 'metal',
     current: model.currentMetal,
+    currentString: model.currentMetalString,
     max: model.maxMetal,
     currentGain: model.metalGain,
+    currentGainString: model.metalGainString,
     currentLoss: model.metalLoss,
+    currentLossString: model.metalLossString,
     net: model.metalNet,
     netStringStock: model.metalNetString,
     netStringBfs: ko.computed(function() {
       return ((model.metalNet() > 0) ? '+' : '') + Math.round(model.metalNet()/10)
     }),
+    efficiencyString: model.metalEfficiencyPercString,
     fractionString: ko.computed(function () {
       return '' + (100 * model.metalFraction()).toFixed(0) + '%';
     }),
@@ -34,14 +38,18 @@ define([
   var energy = {
     resource: 'energy',
     current: model.currentEnergy,
+    currentString: model.currentEnergyString,
     max: model.maxEnergy,
     currentGain: model.energyGain,
+    currentGainString: model.energyGainString,
     currentLoss: model.energyLoss,
+    currentLossString: model.energyLossString,
     net: model.energyNet,
     netStringStock: model.energyNetString,
     netStringBfs: ko.computed(function() {
       return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/1000)
     }),
+    efficiencyString: model.energyEfficiencyPercString,
     fractionString: ko.computed(function () {
       return '' + (100 * model.energyFraction()).toFixed(0) + '%';
     }),

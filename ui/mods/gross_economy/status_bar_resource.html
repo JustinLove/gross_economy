@@ -12,8 +12,8 @@
   </div>
 </div>
 <div class="ge-gross-segment">
-  <div class="ge-gross-demand" data-bind="text: loss.value, tooltip: resource + ' produced'" data-placement="bottom">-8888</div>
-  <div class="ge-gross-supply" data-bind="text: gain.value, tooltip: resource + ' expended'" data-placement="bottom">+8888</div>
+  <div class="ge-gross-demand" data-bind="text: currentLossString, tooltip: resource + ' expended'" data-placement="bottom">-8888</div>
+  <div class="ge-gross-supply" data-bind="text: currentGainString, tooltip: resource + ' produced'" data-placement="bottom">+8888</div>
 </div>
 <div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}, tooltip: 'net ' + resource + ' INCOME'" data-placement="bottom">
   <div class="ge-net" data-bind="text: netString">+8888</div>
@@ -22,7 +22,7 @@
   <div class="ge-storage-frame">
     <div class="ge-storage-fill" data-bind="style: { height: fractionString() }"></div>
     <div class="ge-storage-number">
-      <span data-bind="text: currentBfs">8888</span>
+      <span data-bind="text: currentString">8888</span>
     </div>
   </div>
 </div>

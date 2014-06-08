@@ -23,15 +23,14 @@ define([], function() {
 
   var payload = function() {
     return {
-      energy: resource(10000),
-      metal: resource(100)
+      energy: resource(10000000),
+      metal: resource(10000)
     }
   }
 
   var update = function() {
     setTimeout(update, 1000)
     var p = payload()
-    console.log(p)
     handlers.army(p)
   }
 

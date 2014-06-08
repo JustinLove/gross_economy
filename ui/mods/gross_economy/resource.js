@@ -10,15 +10,29 @@ define(['gross_economy/series'], function(series) {
         resource.netString = resource.netStringBfs
         break
       case 'PERCENT':
-        resource.netString = resource.fractionString
+      case 'EFFICIENCY':
+        resource.netString = resource.efficiencyString
         break
       case 'SIMPLE':
         resource.netString = resource.netStringStock
         break
     }
-    resource.currentBfs = ko.computed(function() {
+
+    var currentBfs = ko.computed(function() {
       return Math.round(resource.current() / resource.tick)
     })
+    switch (settings.gross_economy_resource_storage) {
+      case 'BASIC FABBER SECONDS':
+        resource.currentString = currentBfs
+        break
+      case 'PERCENT':
+        resource.currentString = resource.fractionString
+        break
+      default:
+      case 'SIMPLE':
+        // supplied value
+        break
+    }
     resource.scale = ko.computed(function() {
       if (resource.loss) {
         return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss(),
