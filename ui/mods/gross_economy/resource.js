@@ -27,6 +27,8 @@ define(['gross_economy/series'], function(series) {
         return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss())
       }
     })
+    resource.gain = series(resource.currentGain, resource.scale)
+    resource.loss = series(resource.currentLoss, resource.scale)
     resource.ticks = ko.computed(function() {
       var s = resource.scale()
       var axis = []
@@ -60,24 +62,6 @@ define(['gross_economy/series'], function(series) {
       if (denom < 1) {denom = 1}
       return resource.currentGain() / denom
     })
-    resource.toStorage = ko.computed(function() {
-      var net = Math.max(0, resource.currentGain() - resource.currentLoss() + resource.shared())
-      net = Math.min(net, resource.max() - resource.current())
-      return '' + (100 * net / resource.scale()) + '%'
-    })
-    resource.fromStorage = ko.computed(function() {
-      var net = Math.max(0, resource.currentLoss() - resource.currentGain() - resource.shared())
-      net = Math.min(net, resource.current())
-      return '' + (100 * net / resource.scale()) + '%'
-    })
-    resource.toSharing = ko.computed(function() {
-      var net = Math.max(0, -resource.shared())
-      return '' + (100 * net / resource.scale()) + '%'
-    })
-    resource.fromSharing = ko.computed(function() {
-      var net = Math.max(0, resource.shared())
-      return '' + (100 * net / resource.scale()) + '%'
-    })
     resource.colorCalculated = ko.computed(function() {
       var storage = resource.current() / resource.max()
       var denom = resource.currentLoss()
@@ -96,7 +80,93 @@ define(['gross_economy/series'], function(series) {
       }
     })
 
-    resource.gain = series(resource.currentGain, resource.scale)
-    resource.loss = series(resource.currentLoss, resource.scale)
+    var zero = function() {return 0}
+    var unit_loss = resource.currentLoss
+    var unit_toStorage = ko.computed(function() {
+      var net = Math.max(0, resource.currentGain() - resource.currentLoss() + resource.shared())
+      return Math.min(net, resource.max() - resource.current())
+    })
+    var unit_toSharing = ko.computed(function() {
+      return Math.max(0, -resource.shared())
+    })
+    var unit_gain = resource.currentGain
+    var unit_fromSharing = ko.computed(function() {
+      return Math.max(0, resource.shared())
+    })
+    var unit_fromStorage = ko.computed(function() {
+      var net = Math.max(0, resource.currentLoss() - resource.currentGain() - resource.shared())
+      return Math.min(net, resource.current())
+    })
+
+    var per_loss = ko.computed(function() {
+      return ''+ (100 * unit_loss() / resource.scale()) + '%'
+    })
+    var per_toStorage = ko.computed(function() {
+      return ''+ (100 * unit_toStorage() / resource.scale()) + '%'
+    })
+    var per_toSharingBase = ko.computed(function() {
+      return ''+ (100 * (unit_loss() + unit_toStorage()) / resource.scale()) + '%'
+    })
+    var per_toSharing = ko.computed(function() {
+      return ''+ (100 * unit_toSharing() / resource.scale()) + '%'
+    })
+    var per_gain = ko.computed(function() {
+      return ''+ (100 * unit_gain() / resource.scale()) + '%'
+    })
+    var per_fromSharing = ko.computed(function() {
+      return ''+ (100 * unit_fromSharing() / resource.scale()) + '%'
+    })
+    var per_fromStorageBase = ko.computed(function() {
+      return ''+ (100 * (unit_gain() + unit_fromSharing()) / resource.scale()) + '%'
+    })
+    var per_fromStorage = ko.computed(function() {
+      return ''+ (100 * unit_fromStorage() / resource.scale()) + '%'
+    })
+
+    resource.bars = [
+      {
+        name: 'ge-bar-range',
+        tooltip: '30s range',
+        left: resource.loss.rangeStart,
+        width: resource.loss.rangeEnd
+      },
+      {
+        name: 'ge-bar-loss',
+        tooltip: resource.resource + ' expended',
+        left: zero,
+        width: per_loss
+      },
+      {
+        name: 'ge-bar-to-storage',
+        tooltip: resource.resource + ' to storage',
+        left: per_loss,
+        width: per_toStorage
+      },
+      {
+        name: 'ge-bar-to-sharing',
+        tooltip: resource.resource + ' to allies',
+        left: per_toSharingBase,
+        width: per_toSharing
+      },
+      {
+        name: 'ge-bar-gain',
+        tooltip: resource.resource + ' produced',
+        left: zero,
+        width: per_gain
+      },
+      {
+        name: 'ge-bar-from-sharing',
+        tooltip: resource.resource + ' from allies',
+        left: per_gain,
+        width: per_fromSharing
+      },
+      {
+        name: 'ge-bar-from-storage',
+        tooltip: resource.resource + ' from storage',
+        left: per_fromStorageBase,
+        width: per_fromStorage
+      }
+    ]
+
   }
 })

@@ -1,7 +1,7 @@
 define([], function() {
   var resource = function(scale) {
     var gain = Math.round(Math.random() * scale)
-    var loss = Math.round(Math.random() * scale * 2)
+    var loss = Math.round(Math.random() * Math.random() * scale * 2)
     var storage = scale * 10
     if (Math.random() < 0.33) {
       var current = 0
