@@ -136,40 +136,24 @@
   position: relative;
 }
 
-.ge-bar-gain {
+.ge-bar-gain, .ge-bar-from-storage, .ge-bar-from-sharing {
   position: absolute;
   top: 4px;
   height: 18px;
-  width: 75%;
   z-index: 0;
   border: solid 2px;
 }
 
-.ge-bar-loss {
+.ge-bar-loss, .ge-bar-to-storage, .ge-bar-to-sharing {
   position: absolute;
   top: 9px;
   height: 8px;
-  width: 75%;
   z-index: 1;
 }
 
-.ge-bar-to-storage {
-  position: absolute;
-  height: 8px;
-  width: 0;
-  top: 9px;
-  z-index: 1;
-}
-
-.ge-bar-from-storage {
-  position: absolute;
-  height: 18px;
-  width: 0;
-  top: 2px;
-  z-index: 0;
-  border: solid 0px;
-  border-top-width: 2px;
-  border-bottom-width: 2px;
+.ge-bar-from-storage, .ge-bar-from-sharing {
+  border-left: none;
+  border-right: none;
 }
 
 .ge-bar-range {
@@ -317,6 +301,14 @@
   border-color: white;
 }
 
+.ge-color-inverse .ge-bar-to-sharing {
+  background-color: #f0f;
+}
+
+.ge-color-inverse .ge-bar-from-sharing {
+  border-color: #f0f;
+}
+
 .ge-color-inverse .ge-bar-range {
   border-color: #888;
 }
@@ -426,6 +418,14 @@
 
 .ge-color-black .ge-bar-from-storage {
   border-color: #080;
+}
+
+.ge-color-black .ge-bar-to-sharing {
+  background-color: #900;
+}
+
+.ge-color-black .ge-bar-from-sharing {
+  border-color: #060;
 }
 
 .ge-color-black .ge-bar-range {

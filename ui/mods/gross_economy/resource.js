@@ -61,13 +61,21 @@ define(['gross_economy/series'], function(series) {
       return resource.currentGain() / denom
     })
     resource.toStorage = ko.computed(function() {
-      var net = Math.max(0, resource.currentGain() - resource.currentLoss())
+      var net = Math.max(0, resource.currentGain() - resource.currentLoss() + resource.shared())
       net = Math.min(net, resource.max() - resource.current())
       return '' + (100 * net / resource.scale()) + '%'
     })
     resource.fromStorage = ko.computed(function() {
-      var net = Math.max(0, resource.currentLoss() - resource.currentGain())
+      var net = Math.max(0, resource.currentLoss() - resource.currentGain() - resource.shared())
       net = Math.min(net, resource.current())
+      return '' + (100 * net / resource.scale()) + '%'
+    })
+    resource.toSharing = ko.computed(function() {
+      var net = Math.max(0, -resource.shared())
+      return '' + (100 * net / resource.scale()) + '%'
+    })
+    resource.fromSharing = ko.computed(function() {
+      var net = Math.max(0, resource.shared())
       return '' + (100 * net / resource.scale()) + '%'
     })
     resource.colorCalculated = ko.computed(function() {
