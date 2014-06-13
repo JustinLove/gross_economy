@@ -1,0 +1,33 @@
+{
+    "author": "wondible",
+    "build": "66830",
+    "category": [
+        "in-game",
+        "ui"
+    ],
+    "context": "client",
+    "date": "2014/06/01",
+    "description": "Status bar that emphasises income and expense so that they can be visually compared.",
+    "display_name": "Gross Economy Dev",
+    "enabled": true,
+    "forum": "https://forums.uberent.com/threads/rel-gross-economy-v1-0.56640/",
+    "icon": "http://pamods.github.io/icons/gross_economy.png",
+    "id": "gross_economy_dev",
+    "identifier": "com.wondible.pa.gross_economy_dev",
+    "scenes": {
+        "live_game_econ": [
+            "coui://ui/mods/gross_economy/require.js",
+            "coui://ui/mods/gross_economy/status_bar.css",
+            "coui://ui/mods/gross_economy/bootstrap.js"
+        ],
+        "settings": [
+            "coui://ui/mods/gross_economy/settings.js"
+        ]
+    },
+    "priority": 100,
+    "requires": [
+        "rSettingsManager"
+    ],
+    "signature": "not yet implemented",
+    "version": "4.0.0"
+}
