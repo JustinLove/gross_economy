@@ -6,7 +6,7 @@
         "ui"
     ],
     "context": "client",
-    "date": "2014/06/01",
+    "date": "2014/06/14",
     "description": "Status bar that emphasises income and expense so that they can be visually compared.",
     "display_name": "Gross Economy Dev",
     "enabled": true,
@@ -26,5 +26,5 @@
     },
     "priority": 100,
     "signature": "not yet implemented",
-    "version": "4.0.0"
+    "version": "5.0.0"
 }
