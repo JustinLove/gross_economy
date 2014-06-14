@@ -1,16 +1,22 @@
 (function() {
-  model.addSetting_DropDown(
-    'Resource Net', 'gross_economy_resource_net', 'UI',
-    ['BASIC FABBER SECONDS', 'EFFICIENCY', 'SIMPLE'], 0,
-    'Gross Economy')
-
-  model.addSetting_DropDown(
-    'Resource Storage', 'gross_economy_resource_storage', 'UI',
-    ['BASIC FABBER SECONDS', 'PERCENT', 'SIMPLE'], 2,
-    'Gross Economy')
-
-  model.addSetting_DropDown(
-    'Theme', 'gross_economy_theme', 'UI',
-    ['INVERSE', 'CLASSIC BLACK'], 0,
-    'Gross Economy')
+  _.extend(api.settings.definitions.ui.settings, {
+    gross_economy_resource_net: {
+      title: 'Gross Economy - Resource Net',
+      type: 'select',
+      options: ['BASIC FABBER SECONDS', 'EFFICIENCY', 'SIMPLE'],
+      default: 'BASIC FABBER SECONDS'
+    },
+    gross_economy_resource_storage: {
+      title: 'Gross Economy - Resource Storage',
+      type: 'select',
+      options: ['BASIC FABBER SECONDS', 'PERCENT', 'SIMPLE'],
+      default: 'SIMPLE'
+    },
+    gross_economy_theme: {
+      title: 'Gross Economy - Theme',
+      type: 'select',
+      options: ['INVERSE', 'CLASSIC BLACK'],
+      default: 'INVERSE'
+    }
+  })
 })()

@@ -3,8 +3,8 @@ define(['gross_economy/series'], function(series) {
     return 'rgba(255, 255, 255, ' + weight + ')'
   }
 
-  return function(resource, settings) {
-    switch (settings.gross_economy_resource_net) {
+  return function(resource) {
+    switch (api.settings.isSet('ui', 'gross_economy_resource_net', true)) {
       default:
       case 'BASIC FABBER SECONDS':
         resource.netString = resource.netStringBfs
@@ -21,7 +21,7 @@ define(['gross_economy/series'], function(series) {
     var currentBfs = ko.computed(function() {
       return Math.round(resource.current() / resource.tick)
     })
-    switch (settings.gross_economy_resource_storage) {
+    switch (api.settings.isSet('ui', 'gross_economy_resource_storage', true)) {
       case 'BASIC FABBER SECONDS':
         resource.currentString = currentBfs
         break

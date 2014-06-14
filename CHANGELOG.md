@@ -5,6 +5,7 @@
 - Major refactoring of bars
 - Implement tooltips as in main game
 - Borrow metric units from main game
+- Update for new settings system, no longer depends on rSettingsManager
 
 ## 4.0.0
 

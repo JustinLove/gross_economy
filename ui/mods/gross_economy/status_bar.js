@@ -57,11 +57,8 @@ define([
     judgement: judgement.energy,
   }
 
-  var settings = decode(localStorage.settings)
-  console.log(settings)
-
-  extendResource(metal, settings)
-  extendResource(energy, settings)
+  extendResource(metal)
+  extendResource(energy)
 
   var limit = metal.limit = energy.limit = ko.computed(function() {
     if (metal.ratio() < 1) {
@@ -94,7 +91,7 @@ define([
   })
 
   var theme = function() {
-    switch (settings.gross_economy_theme) {
+    switch (api.settings.isSet('ui', 'gross_economy_theme', true)) {
       default:
       case 'INVERSE':
         return 'ge-color-inverse'
@@ -102,7 +99,6 @@ define([
         return 'ge-color-black'
     }
   }
-  
 
   var installTemplate = function ($parent, html, model) {
     $parent.parent().attr('class', model.resource + ' receiveMouse')
