@@ -1,3 +1,7 @@
+## 5.0.1
+
+- CSS fix to allow top player vision/control checkboxes to be clicked.
+
 ## 5.0.0
 
 - Implement shared resources, in same manner as storage.  Color up in air, don't like any of them.
