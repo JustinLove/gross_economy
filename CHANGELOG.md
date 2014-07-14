@@ -3,6 +3,7 @@
 - If unpacked RequireJS is good enough for Galactic War, it's good enough for me.
 - Without a build process, remove Grunt
 - Remove depreciated fields from modinfo
+- Patch to make mod settings appear in Settings page
 
 ## 5.0.1
 

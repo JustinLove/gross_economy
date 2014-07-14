@@ -19,4 +19,7 @@
       default: 'INVERSE'
     }
   })
+
+  // force model.settingsLists to update
+  model.settingDefinitions(api.settings.definitions)
 })()
