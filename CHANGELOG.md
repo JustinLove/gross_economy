@@ -1,3 +1,9 @@
+## 6.0.0
+
+- If unpacked RequireJS is good enough for Galactic War, it's good enough for me.
+- Without a build process, remove Grunt
+- Remove depreciated fields from modinfo
+
 ## 5.0.1
 
 - CSS fix to allow top player vision/control checkboxes to be clicked.
