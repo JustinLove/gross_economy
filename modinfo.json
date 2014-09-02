@@ -1,27 +1,27 @@
 {
-    "author": "wondible",
-    "build": "68767",
-    "category": [
-        "in-game",
-        "ui"
+  "author": "wondible",
+  "build": "71459",
+  "category": [
+    "in-game",
+    "ui"
+  ],
+  "context": "client",
+  "date": "2014/09/01",
+  "description": "Status bar that emphasises income and expense so that they can be visually compared.",
+  "display_name": "Gross Economy",
+  "forum": "https://forums.uberent.com/threads/rel-gross-economy-v1-0.56640/",
+  "icon": "http://pamods.github.io/icons/gross_economy.png",
+  "identifier": "com.wondible.pa.gross_economy",
+  "scenes": {
+    "live_game_econ": [
+      "coui://ui/mods/gross_economy/status_bar.css",
+      "coui://ui/mods/gross_economy/bootstrap.js"
     ],
-    "context": "client",
-    "date": "2014/07/13",
-    "description": "Status bar that emphasises income and expense so that they can be visually compared.",
-    "display_name": "Gross Economy",
-    "forum": "https://forums.uberent.com/threads/rel-gross-economy-v1-0.56640/",
-    "icon": "http://pamods.github.io/icons/gross_economy.png",
-    "identifier": "com.wondible.pa.gross_economy",
-    "scenes": {
-        "live_game_econ": [
-            "coui://ui/mods/gross_economy/status_bar.css",
-            "coui://ui/mods/gross_economy/bootstrap.js"
-        ],
-        "settings": [
-            "coui://ui/mods/gross_economy/settings.js"
-        ]
-    },
-    "priority": 100,
-    "signature": "not yet implemented",
-    "version": "6.0.0"
+    "settings": [
+      "coui://ui/mods/gross_economy/settings.js"
+    ]
+  },
+  "priority": 100,
+  "signature": "not yet implemented",
+  "version": "6.1.0"
 }

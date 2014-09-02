@@ -1,3 +1,7 @@
+## 6.1.0
+
+- Update to new settings layout circa 17378
+
 ## 6.0.0
 
 - If unpacked RequireJS is good enough for Galactic War, it's good enough for me.
