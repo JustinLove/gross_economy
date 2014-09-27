@@ -1,3 +1,7 @@
+## 6.1.1
+
+- Disable Require.js timeout due to longer game load times with default render process limit.
+
 ## 6.1.0
 
 - Update to new settings layout circa 17378
