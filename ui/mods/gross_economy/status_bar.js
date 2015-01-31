@@ -45,15 +45,15 @@ define([
     net: model.energyNet,
     netStringStock: model.energyNetString,
     netStringBfs: ko.computed(function() {
-      return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/1000)
+      return ((model.energyNet() > 0) ? '+' : '') + Math.round(model.energyNet()/800)
     }),
     efficiencyString: model.energyEfficiencyPercString,
     fractionString: ko.computed(function () {
       return '' + (100 * model.energyFraction()).toFixed(0) + '%';
     }),
     shared: model.energyShared,
-    min: 2000,
-    tick: 1000,
+    min: 1600,
+    tick: 800,
     judgement: judgement.energy,
   }
 

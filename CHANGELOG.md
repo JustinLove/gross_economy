@@ -1,3 +1,7 @@
+## 6.2.0
+
+- Changed the energy unit for basic fabber seconds from 1000 to 800 to match 77443
+
 ## 6.1.1
 
 - Disable Require.js timeout due to longer game load times with default render process limit.

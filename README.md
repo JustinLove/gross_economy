@@ -6,7 +6,7 @@ A status bar mod for Planetary Annihilation that emphasises income and expense s
 
 Note: colors refer to default inverse color scheme.  You can change the theme a more traditional black in the settings.
 
-Income is represented by larger hollow box, demand by a smaller solid bar.  The tick scale is currently 10 metal and 1000 energy, what a typical bot fabber uses, with emphasized marks at 5x.  Note: due to the large range of values that are covered, ticks will be removed when they get too crowded.
+Income is represented by larger hollow box, demand by a smaller solid bar.  The tick scale is currently 10 metal and 800 energy, what a typical bot fabber uses, with emphasized marks at 5x.  Note: due to the large range of values that are covered, ticks will be removed when they get too crowded.
 
 A white extension to a bar represents a shortfall being made up by storage, or a surplus being sent to storage.
 
