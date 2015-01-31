@@ -428,11 +428,11 @@
 }
 
 .ge-color-black .ge-gross-supply {
-  color: #0B0;
+  color: #fff;
 }
 
 .ge-color-black .ge-gross-demand {
-  color: red; 
+  color: #fff; 
 }
 
 .ge-color-black .ge-storage-number {
