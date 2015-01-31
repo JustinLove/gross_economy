@@ -27,7 +27,6 @@
 }
 
 .ge-bar-segment,
-.ge-gross-segment,
 .ge-net-segment,
 .ge-storage-segment {
   display: inline-block;
@@ -58,8 +57,13 @@
   font-family: 'Armata Regular';
 }
 
-
 /***** Supply/Demand Bars ****/
+
+.ge-bar-segment {
+  margin-top: 0px;
+  height: 34px;
+  position: relative;
+}
 
 .ge-bar-ticks {
   position: relative;
@@ -67,29 +71,29 @@
 
 .ge-tick {
   position: absolute;
-  height: 25px;
+  height: 34px;
   width: 0px;
   border-right: solid 1px;
 }
 
 .ge-bar-frame {
-  width: 140px;
-  height: 18px;
+  width: 190px;
+  height: 26px;
   position: relative;
 }
 
 .ge-bar-gain, .ge-bar-from-storage, .ge-bar-from-sharing {
   position: absolute;
   top: 4px;
-  height: 18px;
+  height: 26px;
   z-index: 0;
-  border: solid 2px;
+  border: solid 3px;
 }
 
 .ge-bar-loss, .ge-bar-to-storage, .ge-bar-to-sharing {
   position: absolute;
   top: 9px;
-  height: 8px;
+  height: 12px;
   z-index: 1;
 }
 
@@ -99,21 +103,31 @@
 }
 
 .ge-bar-range {
-  border-top: solid 1px;
+  border-top: solid 2px;
   position: absolute;
   top: 10px;
   height: 1px;
   z-index: 2;
 }
 
-/**** Gross **/
+/****** Bars: Gross *****/
 
-.ge-gross-segment {
-  width: 30px;
+.ge-gross-demand, .ge-gross-supply {
   overflow: visible;
-  font-size: 9px;
+  font-size: 10px;
   font-family: 'Armata Regular';
   text-align: right;
+  position: absolute;
+  left: 4px;
+  z-index: 10;
+}
+
+.ge-gross-demand {
+  top: 8px;
+}
+
+.ge-gross-supply {
+  bottom: 0px;
 }
 
 /***** Net ****/
@@ -295,11 +309,11 @@
 }
 
 .ge-color-inverse .ge-gross-supply {
-  color: #060;
+  color: #0f0;
 }
 
 .ge-color-inverse .ge-gross-demand {
-  color: #800;
+  color: #f88;
 }
 
 .ge-color-inverse .ge-net {
