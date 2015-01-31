@@ -4,7 +4,7 @@
       title: 'Resource Net',
       type: 'select',
       options: ['BASIC FABBER SECONDS', 'EFFICIENCY', 'SIMPLE'],
-      default: 'BASIC FABBER SECONDS'
+      default: 'SIMPLE'
     },
     gross_economy_resource_storage: {
       title: 'Resource Storage',

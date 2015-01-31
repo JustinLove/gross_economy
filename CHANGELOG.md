@@ -1,3 +1,9 @@
+## 6.3.0
+
+- Rearranged elements to emphasize resource bars.
+- Changed default net unit to simple.
+- Add tag `economy`
+
 ## 6.2.0
 
 - Changed the energy unit for basic fabber seconds from 1000 to 800 to match 77443
