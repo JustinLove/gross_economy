@@ -26,7 +26,6 @@
   position: relative;
 }
 
-.ge-icon-segment,
 .ge-bar-segment,
 .ge-gross-segment,
 .ge-net-segment,
@@ -59,57 +58,6 @@
   font-family: 'Armata Regular';
 }
 
-/***** Icon Section *****/
-
-.ge-icon-segment {
-  width: 30px;
-}
-
-.ge-icon-background {
-  width: 30px;
-  height: 30px;
-  border-radius: 100%; 
-  position: absolute;
-  top: 2px;
-}
-
-.energy .ge-icon-background {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #F9EC31),
-  color-stop(0, #ADA100)
-  );
-}
-
-.metal .ge-icon-background {
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(1, #00BBFF),
-  color-stop(0, #0279A1)
-  );
-}
-
-.ge-category-icon {
-  position: absolute;
-  width: 21px;
-  height: 21px;
-}
-
-.metal .ge-category-icon {
-  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-metal.png) no-repeat;
-  top: 7px;
-  left: 5px;
-}
-
-.energy .ge-category-icon {
-  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-energy.png) no-repeat;
-  top: 7px;
-  left: 8px;
-}
 
 /***** Supply/Demand Bars ****/
 
@@ -125,7 +73,7 @@
 }
 
 .ge-bar-frame {
-  width: 110px;
+  width: 140px;
   height: 18px;
   position: relative;
 }
@@ -175,12 +123,65 @@
   overflow: visible;
   font-size: 14px;
   font-family: 'Armata Regular';
-  text-align: right;
+  text-align: center;
 }
 
 .ge-net {
-  float: right;
   padding: 2px 4px;
+  position: relative;
+  top: 2px;
+  z-index: 1;
+}
+
+/***** Net: Icon *****/
+
+.ge-icon-background {
+  width: 50px;
+  height: 34px;
+  border-radius: 34px; 
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+}
+
+.energy .ge-icon-background {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #F9EC31),
+  color-stop(0, #ADA100)
+  );
+}
+
+.metal .ge-icon-background {
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(1, #00BBFF),
+  color-stop(0, #0279A1)
+  );
+}
+
+.ge-category-icon {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+}
+
+.metal .ge-category-icon {
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-metal.png) no-repeat;
+  background-size: 100%;
+  top: 4px;
+  left: 8px;
+}
+
+.energy .ge-category-icon {
+  background: url(coui://ui/main/game/live_game/img/status_bar/icon-status-energy.png) no-repeat;
+  background-size: 100%;
+  top: 0px;
+  left: 8px;
 }
 
 /****** Storage Section ******/

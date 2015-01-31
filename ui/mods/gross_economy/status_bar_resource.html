@@ -1,8 +1,3 @@
-<div class="ge-icon-segment" data-bind="css: {'economic-stall': ratio() < 1}, tooltip: resource" data-placement="bottom">
-  <div class="ge-icon-background">
-    <div class="ge-category-icon"></div>
-  </div>
-</div>
 <div class="ge-bar-segment">
   <div class="ge-bar-ticks" data-bind="foreach: ticks">
     <div class="ge-tick" data-bind="style: {left: x, borderColor: color}"></div>
@@ -16,6 +11,9 @@
   <div class="ge-gross-supply" data-bind="text: currentGainString, tooltip: resource + ' produced'" data-placement="bottom">+8888</div>
 </div>
 <div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}, tooltip: 'net ' + resource + ' INCOME'" data-placement="bottom">
+  <div class="ge-icon-background">
+    <div class="ge-category-icon"></div>
+  </div>
   <div class="ge-net" data-bind="text: netString">+8888</div>
 </div>
 <div class="ge-storage-segment" data-bind="tooltip: resource + ' storage'" data-placement="bottom">
