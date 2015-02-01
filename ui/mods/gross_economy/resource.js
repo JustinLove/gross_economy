@@ -61,7 +61,9 @@ define(['gross_economy/series'], function(series) {
 
     var percent = function(left, right) {
       return ko.computed(function() {
-        return '' + (100 * (transform(right()) - transform(left()))) + '%'
+        var d = transform(right()) - transform(left())
+        if (d < 0) {return 0}
+        return '' + (100 * d) + '%'
       })
     }
 

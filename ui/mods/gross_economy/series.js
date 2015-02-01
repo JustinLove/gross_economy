@@ -22,9 +22,11 @@ define([], function() {
       s.min(Math.min.apply(Math, valueHistory))
     })
 
-    s.rangeStart = s.min
+    s.rangeStart = ko.computed(function() {
+      return Math.max(0, s.min())
+    })
     s.rangeEnd = ko.computed(function() {
-      return Math.min(1000000, s.max()) - Math.max(0, s.min())
+      return Math.min(1000000, s.max())
     })
 
     return s
