@@ -1,13 +1,13 @@
 define([], function() {
-  return function(value, scale) {
+  return function(value, transform) {
     var valueHistory = []
     var timeHistory = []
 
     var s = {
-      scale: scale,
+      transform: transform,
       value: value,
       percent: ko.computed(function() {
-        return '' + (100 * value() / scale()) + '%';
+        return '' + transform(value()) + '%';
       }),
       max: ko.observable(0),
       min: ko.observable(1000000000)
@@ -27,10 +27,10 @@ define([], function() {
     })
 
     s.rangeStart = ko.computed(function() {
-      return '' + (100 * s.min() / scale()) + '%'
+      return '' + transform(s.min()) + '%'
     })
     s.rangeEnd = ko.computed(function() {
-      return '' + (100 * (Math.min(scale(), s.max()) - s.min()) / scale()) + '%'
+      return '' + transform(Math.min(1000000, s.max()) - Math.max(0, s.min())) + '%'
     })
 
     return s

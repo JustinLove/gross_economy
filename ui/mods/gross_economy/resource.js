@@ -41,8 +41,30 @@ define(['gross_economy/series'], function(series) {
         return Math.max(resource.min, resource.currentGain() * 2, resource.currentLoss())
       }
     })
-    resource.gain = series(resource.currentGain, resource.scale)
-    resource.loss = series(resource.currentLoss, resource.scale)
+
+    /*
+    resource.transform = function(x) {
+      return x / resource.scale()
+    }
+    */
+
+    var transform = resource.transform = function(x) {
+      if (x == 0) {
+        return 0
+      } else {
+        var y = Math.log(x/resource.tick) / Math.log(10000)
+        return y
+      }
+    }
+
+    var percent = function(left, right) {
+      return ko.computed(function() {
+        return '' + (100 * (transform(right()) - transform(left()))) + '%'
+      })
+    }
+
+    resource.gain = series(resource.currentGain, resource.transform)
+    resource.loss = series(resource.currentLoss, resource.transform)
     resource.ticks = ko.computed(function() {
       var s = resource.scale()
       var axis = []
@@ -112,29 +134,17 @@ define(['gross_economy/series'], function(series) {
       return Math.min(net, resource.current())
     })
 
-    var per_loss = ko.computed(function() {
-      return ''+ (100 * unit_loss() / resource.scale()) + '%'
+    var unit_rightToStorage = ko.computed(function() {
+      return unit_loss() + unit_toStorage()
     })
-    var per_toStorage = ko.computed(function() {
-      return ''+ (100 * unit_toStorage() / resource.scale()) + '%'
+    var unit_rightToSharing = ko.computed(function() {
+      return unit_loss() + unit_toStorage() + unit_toSharing()
     })
-    var per_toSharingBase = ko.computed(function() {
-      return ''+ (100 * (unit_loss() + unit_toStorage()) / resource.scale()) + '%'
+    var unit_rightFromSharing = ko.computed(function() {
+      return unit_gain() + unit_fromSharing()
     })
-    var per_toSharing = ko.computed(function() {
-      return ''+ (100 * unit_toSharing() / resource.scale()) + '%'
-    })
-    var per_gain = ko.computed(function() {
-      return ''+ (100 * unit_gain() / resource.scale()) + '%'
-    })
-    var per_fromSharing = ko.computed(function() {
-      return ''+ (100 * unit_fromSharing() / resource.scale()) + '%'
-    })
-    var per_fromStorageBase = ko.computed(function() {
-      return ''+ (100 * (unit_gain() + unit_fromSharing()) / resource.scale()) + '%'
-    })
-    var per_fromStorage = ko.computed(function() {
-      return ''+ (100 * unit_fromStorage() / resource.scale()) + '%'
+    var unit_rightFromStorage = ko.computed(function() {
+      return unit_gain() + unit_fromSharing() + unit_fromStorage()
     })
 
     resource.bars = [
@@ -148,39 +158,38 @@ define(['gross_economy/series'], function(series) {
         name: 'ge-bar-loss',
         tooltip: resource.resource + ' expended',
         left: zero,
-        width: per_loss
+        width: percent(zero, unit_loss)
       },
       {
         name: 'ge-bar-to-storage',
         tooltip: resource.resource + ' to storage',
-        left: per_loss,
-        width: per_toStorage
+        left: percent(zero, unit_loss),
+        width: percent(unit_loss, unit_rightToStorage)
       },
       {
         name: 'ge-bar-to-sharing',
         tooltip: resource.resource + ' to allies',
-        left: per_toSharingBase,
-        width: per_toSharing
+        left: percent(zero, unit_rightToStorage),
+        width: percent(unit_rightToStorage, unit_rightToSharing)
       },
       {
         name: 'ge-bar-gain',
         tooltip: resource.resource + ' produced',
         left: zero,
-        width: per_gain
+        width: percent(zero, unit_gain)
       },
       {
         name: 'ge-bar-from-sharing',
         tooltip: resource.resource + ' from allies',
-        left: per_gain,
-        width: per_fromSharing
+        left: percent(zero, unit_gain),
+        width: percent(unit_gain, unit_rightFromSharing)
       },
       {
         name: 'ge-bar-from-storage',
         tooltip: resource.resource + ' from storage',
-        left: per_fromStorageBase,
-        width: per_fromStorage
+        left: percent(zero, unit_rightFromSharing),
+        width: percent(unit_rightFromSharing, unit_rightFromStorage)
       }
     ]
-
   }
 })
