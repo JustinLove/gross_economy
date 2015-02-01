@@ -8,8 +8,8 @@
   <div class="ge-bar-frame" data-bind="foreach: bars">
     <div data-bind="attr: {class: name}, style: { left: left, width: width}, tooltip: tooltip" data-placement="bottom"></div>
   </div>
-  <div class="ge-gross-demand" data-bind="text: currentLossString, tooltip: resource + ' expended'" data-placement="bottom">-8888</div>
   <div class="ge-gross-supply" data-bind="text: currentGainString, tooltip: resource + ' produced'" data-placement="bottom">+8888</div>
+  <div class="ge-gross-demand" data-bind="text: currentLossString, tooltip: resource + ' expended'" data-placement="bottom">-8888</div>
 </div>
 <div class="ge-net-segment" data-bind="css: {'economic-limit': limit() == resource}, tooltip: 'net ' + resource + ' INCOME'" data-placement="bottom">
   <div class="ge-net" data-bind="text: netString">+8888</div>
