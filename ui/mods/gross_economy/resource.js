@@ -43,12 +43,12 @@ define(['gross_economy/series'], function(series) {
     })
 
     /*
-    resource.transform = function(x) {
+    var transform = function(x) {
       return x / resource.scale()
     }
     */
 
-    var transform = resource.transform = function(x) {
+    var transform = function(x) {
       if (x == 0) {
         return 0
       } else {
@@ -63,8 +63,8 @@ define(['gross_economy/series'], function(series) {
       })
     }
 
-    resource.gain = series(resource.currentGain, resource.transform)
-    resource.loss = series(resource.currentLoss, resource.transform)
+    resource.gain = series(resource.currentGain)
+    resource.loss = series(resource.currentLoss)
     resource.ticks = ko.computed(function() {
       var s = resource.scale()
       var axis = []
@@ -151,8 +151,8 @@ define(['gross_economy/series'], function(series) {
       {
         name: 'ge-bar-range',
         tooltip: '30s range',
-        left: resource.loss.rangeStart,
-        width: resource.loss.rangeEnd
+        left: percent(zero, resource.loss.rangeStart),
+        width: percent(resource.loss.rangeStart, resource.loss.rangeEnd)
       },
       {
         name: 'ge-bar-loss',
