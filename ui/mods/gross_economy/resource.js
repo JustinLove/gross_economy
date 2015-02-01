@@ -42,20 +42,20 @@ define(['gross_economy/series'], function(series) {
       }
     })
 
-    /*
-    var transform = function(x) {
+    var linearTransform = function(x) {
       return x / resource.scale()
     }
-    */
 
-    var transform = function(x) {
+    var exponentialTransform = function(x) {
       if (x == 0) {
         return 0
       } else {
-        var y = Math.log(x/resource.tick) / Math.log(10000)
+        var y = Math.log((x/resource.tick)+1) / Math.log(10000)
         return y
       }
     }
+
+    var transform = exponentialTransform
 
     var percent = function(left, right) {
       return ko.computed(function() {
@@ -63,9 +63,7 @@ define(['gross_economy/series'], function(series) {
       })
     }
 
-    resource.gain = series(resource.currentGain)
-    resource.loss = series(resource.currentLoss)
-    resource.ticks = ko.computed(function() {
+    var linearTicks = ko.computed(function() {
       var s = resource.scale()
       var axis = []
       var dx = resource.tick
@@ -90,6 +88,35 @@ define(['gross_economy/series'], function(series) {
       }
       return axis
     })
+
+    var exponentialTicks = function() {
+      var axis = []
+      var dx = resource.tick
+      var s = 10000*dx
+      var c = [
+        tickColor(0.3),
+        tickColor(0.4),
+        tickColor(0.5),
+        tickColor(0.6),
+        tickColor(0.7),
+      ]
+      for(var x = 0;x < s;) {
+        for (var j = 0;j < 5;j+=1) {
+          x += dx
+          var t = transform(x)
+          if (t < 1) {
+            axis.push({x: '' + (100 * t) + '%', color: c[j]})
+          }
+        }
+        dx *= 5
+      }
+      return axis
+    }
+
+    resource.ticks = exponentialTicks()
+
+    resource.gain = series(resource.currentGain)
+    resource.loss = series(resource.currentLoss)
     resource.ratio = ko.computed(function() {
       if (resource.current() > 1) {
         return 1

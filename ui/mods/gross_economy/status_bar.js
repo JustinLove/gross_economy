@@ -52,8 +52,8 @@ define([
       return '' + (100 * model.energyFraction()).toFixed(0) + '%';
     }),
     shared: model.energyShared,
-    min: 1600,
-    tick: 800,
+    min: 2000,
+    tick: 1000,
     judgement: judgement.energy,
   }
 
