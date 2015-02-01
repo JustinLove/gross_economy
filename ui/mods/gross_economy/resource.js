@@ -5,7 +5,6 @@ define(['gross_economy/series'], function(series) {
 
   return function(resource) {
     switch (api.settings.isSet('ui', 'gross_economy_resource_net', true)) {
-      default:
       case 'BASIC FABBER SECONDS':
         resource.netString = resource.netStringBfs
         break
@@ -13,6 +12,7 @@ define(['gross_economy/series'], function(series) {
       case 'EFFICIENCY':
         resource.netString = resource.efficiencyString
         break
+      default:
       case 'SIMPLE':
         resource.netString = resource.netStringStock
         break
@@ -50,12 +50,14 @@ define(['gross_economy/series'], function(series) {
       if (x == 0) {
         return 0
       } else {
-        var y = Math.log((x/resource.tick)+1) / Math.log(10000)
+        var y = Math.log((x/resource.tick)+1) / Math.log(logScale)
         return y
       }
     }
 
-    var transform = exponentialTransform
+    // likely overwritten
+    var logScale = 1000
+    var transform = linearTransform 
 
     var percent = function(left, right) {
       return ko.computed(function() {
@@ -92,7 +94,7 @@ define(['gross_economy/series'], function(series) {
     var exponentialTicks = function() {
       var axis = []
       var dx = resource.tick
-      var s = 10000*dx
+      var s = logScale*dx
       var c = [
         tickColor(0.3),
         tickColor(0.4),
@@ -113,7 +115,18 @@ define(['gross_economy/series'], function(series) {
       return axis
     }
 
-    resource.ticks = exponentialTicks()
+    switch (api.settings.isSet('ui', 'gross_economy_scale', true)) {
+      default:
+      case 'RELATIVE':
+        transform = linearTransform
+        resource.ticks = linearTicks
+        break
+      case 'LOG':
+        logScale = 1000
+        transform = exponentialTransform
+        resource.ticks = exponentialTicks()
+        break
+    }
 
     resource.gain = series(resource.currentGain)
     resource.loss = series(resource.currentLoss)

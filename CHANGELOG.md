@@ -2,6 +2,7 @@
 
 - Rearranged elements to emphasize resource bars.
 - Changed default net unit to simple.
+- Optional log scale
 - Add tag `economy`
 
 ## 6.2.0

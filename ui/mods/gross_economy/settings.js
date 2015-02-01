@@ -12,6 +12,12 @@
       options: ['BASIC FABBER SECONDS', 'PERCENT', 'SIMPLE'],
       default: 'SIMPLE'
     },
+    gross_economy_scale: {
+      title: 'Resource Scale',
+      type: 'select',
+      options: ['RELATIVE', 'LOG'],
+      default: 'RELATIVE'
+    },
     gross_economy_theme: {
       title: 'Theme',
       type: 'select',
