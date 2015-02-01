@@ -12,13 +12,11 @@ A white extension to a bar represents a shortfall being made up by storage, or a
 
 The grey dash in the demand bar is the range of values over the last 30 seconds.
 
-The net amount of each resource is expressed in "basic fabbers" that could be started or stopped to balance that side of the economy.  This can also be set to percent or PA standard in settings.
-
 The background color is coded similar to Economic Efficiency (see below)
 
 The net amount is invert highlighted when that resource is the limit on build rate.
 
-Storage has been made smaller and vertical.  Units are expressed in basic-fabber-seconds.
+Storage has been made smaller and vertical.
 
 ## Color Code
 
