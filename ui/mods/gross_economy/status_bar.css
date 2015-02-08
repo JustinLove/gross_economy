@@ -145,20 +145,25 @@
 
 .ge-gross-demand, .ge-gross-supply {
   overflow: visible;
-  font-size: 10px;
   font-family: 'Armata Regular';
-  text-align: right;
   position: absolute;
-  left: 4px;
   z-index: 10;
 }
 
 .ge-gross-demand {
+  text-align: right;
+  font-size: 10px;
   top: 13px;
+  left: 4px;
 }
 
 .ge-gross-supply {
-  top: 1px;
+  text-align: center;
+  font-size: 20px;
+  top: 4px;
+  left: 50px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 1px #000;
 }
 
 /***** Net ****/
@@ -291,7 +296,7 @@
 }
 
 .ge-color-inverse .ge-gross-supply {
-  color: #0f0;
+  color: #8f8;
 }
 
 .ge-color-inverse .ge-gross-demand {
