@@ -123,7 +123,7 @@
 
 .ge-bar-loss, .ge-bar-to-storage, .ge-bar-to-sharing {
   position: absolute;
-  top: 14px;
+  top: 12px;
   height: 10px;
   z-index: 1;
 }
@@ -136,7 +136,7 @@
 .ge-bar-range {
   border-top: solid 2px;
   position: absolute;
-  top: 16px;
+  top: 14px;
   height: 1px;
   z-index: 2;
 }
@@ -153,7 +153,7 @@
 .ge-gross-demand {
   text-align: right;
   font-size: 10px;
-  top: 13px;
+  top: 11px;
   left: 4px;
 }
 
@@ -162,7 +162,7 @@
   font-size: 20px;
   top: 4px;
   left: 50px;
-  opacity: 0.9;
+  opacity: 0.6;
   text-shadow: 1px 1px 1px #000;
 }
 
