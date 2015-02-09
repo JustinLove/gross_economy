@@ -1,13 +1,13 @@
 {
   "author": "wondible",
-  "build": "77443",
+  "build": "77725",
   "category": [
     "in-game",
     "ui",
     "economy"
   ],
   "context": "client",
-  "date": "2015/02/01",
+  "date": "2015/02/08",
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy",
   "forum": "https://forums.uberent.com/threads/rel-gross-economy-v1-0.56640/",

@@ -1,7 +1,7 @@
 ## 6.3.0
 
 - Rearranged elements to emphasize resource bars.
-- Vertically swapped supply and demand for consistency with vanilla.
+- Demand number is in number bar; supply number is larger and semi-transparent
 - Changed default net unit to simple.
 - Optional log scale
 - Add tag `economy`
