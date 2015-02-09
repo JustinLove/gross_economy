@@ -11,7 +11,7 @@
   "description": "Status bar that emphasises income and expense so that they can be visually compared.",
   "display_name": "Gross Economy",
   "forum": "https://forums.uberent.com/threads/rel-gross-economy-v1-0.56640/",
-  "icon": "http://pamods.github.io/icons/gross_economy.png",
+  "icon": "http://wondible.com/pa/icons/gross_economy_i2.png",
   "identifier": "com.wondible.pa.gross_economy",
   "scenes": {
     "live_game_econ": [
