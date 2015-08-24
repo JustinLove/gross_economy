@@ -51,10 +51,30 @@
 
 .gross-economy-eff {
   height: 35px;
-  text-align: center;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
   position: absolute;
-  font-family: 'Armata Regular';
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.gross-economy-eff > .wrapper {
+  height: 60px;
+  margin-top: 5px;
+  position: relative;
+  display: flex;
+}
+
+.gross-economy-eff > .wrapper > div {
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 /***** Icon *****/

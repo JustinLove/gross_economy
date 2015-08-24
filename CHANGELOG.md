@@ -1,3 +1,7 @@
+## 6.3.1
+
+- Triage layout of overall efficiency for 86422 (titans); still a little wonky with eco multiplier
+
 ## 6.3.0
 
 - Rearranged elements to emphasize resource bars.

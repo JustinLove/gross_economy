@@ -112,7 +112,7 @@ define([
       console.log("Gross Economy ready, modifing status bar");
       installTemplate($('.div-metal .contents'), html, metal);
       installTemplate($('.div-energy .contents'), html, energy);
-      $eff = $('.div-eff').attr('class', 'gross-economy-eff')
+      $eff = $('.div-econ').attr('class', 'gross-economy-eff')
       $('.div-econ-bar').attr('class', 'gross-economy-bar ignoreMouse ' + theme())
 
       //require(['gross_economy/fake_economy'], function(fake) {
