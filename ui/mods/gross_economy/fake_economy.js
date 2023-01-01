@@ -17,21 +17,22 @@ define([], function() {
       storage: storage,
       production: gain,
       demand: loss,
-      shared: shared
+      shared: shared,
     }
   }
 
   var payload = function() {
     return {
       energy: resource(10000000),
-      metal: resource(10000)
+      metal: resource(10000),
+      handicap: 1,
     }
   }
 
-  var update = function() {
-    setTimeout(update, 1000)
+  var update = function(army) {
+    setTimeout(update, 1000, army)
     var p = payload()
-    handlers.army(p)
+    army(p)
   }
 
 

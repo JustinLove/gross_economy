@@ -103,8 +103,10 @@ define([
   var installTemplate = function ($parent, html, model) {
     $parent.parent().attr('class', model.resource + ' receiveMouse')
     $parent.html(html)
-    model.$parent = $parent
-    ko.applyBindings(model, $parent[0]);
+    model.$parent = $($parent.children()[0])
+    try {
+      ko.applyBindings(model, $parent.children()[0]);
+    } catch(e) {console.log(e)}
   };
 
   return {
@@ -115,9 +117,11 @@ define([
       $eff = $('.div-econ').attr('class', 'gross-economy-eff')
       $('.div-econ-bar').attr('class', 'gross-economy-bar ignoreMouse ' + theme())
 
-      //require(['gross_economy/fake_economy'], function(fake) {
-        //setTimeout(function() { fake.update() }, 1000)
-      //})
+      /*require(['gross_economy/fake_economy'], function(fake) {
+        var army = handlers.army
+        handlers.army = function() {}
+        setTimeout(function() { fake.update(army) }, 1000)
+      })*/
     },
     metal: metal,
     energy: energy

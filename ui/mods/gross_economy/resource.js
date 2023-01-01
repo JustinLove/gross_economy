@@ -154,7 +154,7 @@ define(['gross_economy/series'], function(series) {
 
     resource.coloration.subscribe(function(value) {
       if (resource.$parent) {
-        resource.$parent.attr('class', 'contents ' + value)
+        resource.$parent.attr('class', 'ge-contents ' + value)
       }
     })
 
